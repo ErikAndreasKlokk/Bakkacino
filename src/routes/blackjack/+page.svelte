@@ -1,6 +1,6 @@
 <script>
-	import Chat from './chat.svelte'
-	import Header from './header.svelte'
+	import Chat from '../chat.svelte'
+	import Header from '../header.svelte'
 
 </script>
 
