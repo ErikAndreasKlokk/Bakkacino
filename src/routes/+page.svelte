@@ -8,7 +8,7 @@
 	<div class=" w-4/5 h-screen">
 		<Header />
 		<div>
-
+			
 		</div>
 	</div>
 	<Chat />

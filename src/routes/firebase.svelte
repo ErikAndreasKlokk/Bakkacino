@@ -1,19 +1,22 @@
 <script>
     // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+    import { initializeApp } from "firebase/app";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBXRxjSYJSKh4Qro2gLpdeSAbbsNwH9uFw",
-  authDomain: "bakkacino.firebaseapp.com",
-  projectId: "bakkacino",
-  storageBucket: "bakkacino.appspot.com",
-  messagingSenderId: "816188495598",
-  appId: "1:816188495598:web:8231919b5907aa778305ff"
-};
+    // Your web app's Firebase configuration
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+    import { APIKEY, AUTHDOMAIN, PROJECTID, STORAGEBUCKET, MESSAGINGSENDERID, APPID } from '$env/static/private'
+
+    const firebaseConfig = {
+    apiKey: APIKEY,
+    authDomain: AUTHDOMAIN,
+    projectId: PROJECTID,
+    storageBucket: STORAGEBUCKET,
+    messagingSenderId: MESSAGINGSENDERID,
+    appId: APPID
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
 </script>
