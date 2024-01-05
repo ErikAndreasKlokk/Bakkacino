@@ -26,7 +26,7 @@
 					<p class=" font-extrabold text-xl">Games</p>
 				</div>
 				<div class=" flex mt-3" >
-					<a href="/blackjack" class=" relative h-52 w-52 bg-primary-900 cursor-pointer">
+					<a href="/blackjack" class=" relative h-52 w-52 bg-primary-900 cursor-pointer border-2 border-primary-500 rounded-lg">
 						<img src="/blackjack.png" alt="blackjack">
 						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-700 z-10">
 							<p>Blackjack</p>
