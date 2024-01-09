@@ -34,7 +34,6 @@
 		while (arrayMedSistSpilteSpill.length < 10) {
 			arrayMedSistSpilteSpill.push(betaSpill)
 		}
-		console.log(arrayMedSistSpilteSpill)
 		return arrayMedSistSpilteSpill
 	}
 
@@ -42,7 +41,7 @@
 
 </script>
 
-<main class=" w-screen h-screen flex justify-between overflow-x-hidden">
+<main class=" w-screen h-screen flex justify-between overflow-x-hidden font-sans">
 	<div class=" w-[calc(100%-20.625rem)] h-screen relative flex flex-col items-center">
 		<Header />
 		<div class=" min-h-32 w-full"></div>
