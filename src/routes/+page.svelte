@@ -43,11 +43,11 @@
 </script>
 
 <main class=" w-screen h-screen flex justify-between overflow-x-hidden">
-	<div class=" w-4/5 h-screen">
+	<div class=" w-[calc(100%-20.625rem)] h-screen relative flex flex-col items-center">
 		<Header />
-		<div class=" h-1/6"></div>
-		<div class=" p-10">
-			<div class=" flex w-full max-h-1/6 justify-between items-center p-5 border-primary-600 [border-width:_1px;] rounded-3xl bg-gradient-to-r from-transparent to-primary-900">
+		<div class=" min-h-32 w-full"></div>
+		<div class=" p-10 max-w-[1200px]">
+			<div class=" flex w-full justify-between items-center p-5 border-primary-600 [border-width:_1px;] rounded-3xl bg-gradient-to-r from-transparent to-primary-900">
 				<div class=" flex w-1/2 justify-between">
 					<div class=" flex items-center mr-2"><img class=" w-40" src="/CoinDrops.png" alt="Coindrops logo"></div>
 					<div class=" w-4/5 flex flex-col ml-3">
@@ -78,7 +78,7 @@
 					</a>
 				</div>
 			</div>
-			<div class=" flex flex-col items-center w-full bg-slate-950 rounded-xl border-[0.5px] border-surface-500 pb-10">
+			<div class=" flex flex-col items-center w-full bg-neutral-900 rounded-xl border-[0.5px] border-surface-500 pb-10">
 				<div class=" h-10 flex items-center border-b-2 border-primary-500 mt-2">
 					<p class=" font-extrabold tracking-tight text-1xl">De siste spillene</p>
 				</div>
@@ -98,7 +98,7 @@
 					</div>
 					<!-- Her er de forksjellige spillene spillere har spilt -->
 					<div id="DIV_MED_SPILL" class=" relative">
-						<div class=" absolute h-full w-full bg-gradient-to-b from-transparent to-slate-950 z-10"></div>
+						<div class=" absolute h-full w-full bg-gradient-to-b from-transparent to-neutral-900 to-[99%] z-10"></div>
 						{#each arrayting as div, i}
 							<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400"><div class=" w-[30%] text-surface-100 font-extrabold text-sm"><p>Blackjack</p></div><div class=" w-[30%] text-surface-100 font-extrabold text-sm"><p>Erik The Wanker</p></div><div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm"><div class=" flex"><img class=" h-5" src="/Gold-Coin.png" alt="Gold coin"><p>10.00</p></div><p>2x</p><div class=" flex"><img class=" h-5" src="/Gold-Coin.png" alt="Gold coin"><p>20.00</p></div></div></div>
 						{/each}

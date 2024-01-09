@@ -4,10 +4,10 @@
 </script>
 
 <div class="flex justify-between h-screen w-screen">
-    <div class="flex flex-col h-screen w-4/5">
+    <div class="flex flex-col items-center h-screen w-[calc(100%-20.625rem)]">
         <Header/>
-        <div class=" h-1/6"></div>
-        <div class="flex items-center justify-between bg-primary-700 h-5/6 w-full">
+        <div class=" min-h-32"></div>
+        <div class="flex items-center justify-between bg-primary-700 h-5/6 w-full max-w-[1200px]">
             <div class="flex  h-full w-1/3">
 
             </div>
