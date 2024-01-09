@@ -33,11 +33,12 @@
 
 </script>
 
-<main class=" w-screen h-screen flex justify-between">
+<main class=" w-screen h-screen flex justify-between overflow-x-hidden">
 	<div class=" w-4/5 h-screen">
 		<Header />
+		<div class=" h-1/6"></div>
 		<div class=" p-10">
-			<div class=" flex w-full max-h-1/6 justify-between items-center p-5 border-primary-500 border-2 rounded-3xl bg-gradient-to-r from-transparent to-primary-900">
+			<div class=" flex w-full max-h-1/6 justify-between items-center p-5 border-primary-600 [border-width:_1px;] rounded-3xl bg-gradient-to-r from-transparent to-primary-900">
 				<div class=" flex w-1/2 justify-between">
 					<div class=" flex items-center mr-2"><img class=" w-40" src="/CoinDrops.png" alt="Coindrops logo"></div>
 					<div class=" w-4/5 flex flex-col ml-3">
@@ -45,25 +46,184 @@
 							<img class=" mr-2 " src="/clock.svg" alt="klokke">
 							<div class=" w-4/6" id="safeTimerDisplay"></div>
 						</div>
-						<div class=" text-xs">Coindrop's skjer hvert <span class=" font-extrabold text-gray-50">30. minutt</span> og gir alle som deltar en del av pengene i <span class=" font-extrabold text-primary-500">Coindrop's potten</span>.</div>
+						<div class=" text-xs">Coindrops skjer hvert <span class=" font-extrabold text-gray-50">30. minutt</span> og gir alle som deltar en del av pengene i <span class=" font-extrabold text-primary-500">Coindrop's potten</span>.</div>
 					</div>
 				</div>
-				<div class=" flex">
-					<img src="" alt="">
-					<p class=" text-3xl">11.00</p>
+				<div class=" flex shadow-2xl bg-surface-800 w-72 h-20 justify-between items-center rounded-lg">
+					<img class=" ml-7 h-14" src="/Gold_Coins.png" alt="">
+					<div class=" flex justify-center items-center mr-4">
+						<p class=" font-extrabold text-4xl [letter-spacing:_0.6rem;] [text-shadow:_0_2px_0_rgb(0_0_0_/_50%)] ">11.00</p>
+					</div>
 				</div>
 			</div>
-			<div class=" flex flex-col mt-10">
+			<div class=" flex flex-col mt-10 mb-10">
 				<div>
 					<p class=" font-extrabold text-xl">Bakkacino Orginaler</p>
 				</div>
 				<div class=" flex mt-3" >
-					<a href="/blackjack" class=" relative h-52 w-52 bg-primary-900 cursor-pointer border-2 border-primary-500 rounded-lg overflow-hidden">
+					<a href="/blackjack" class=" relative h-52 w-52 bg-primary-900 cursor-pointer rounded-lg overflow-hidden">
 						<img src="/blackjack.png" alt="blackjack">
-						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-700 z-10">
-							<p>Blackjack</p>
+						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
+							<p class=" font-extrabold tracking-wider text-lg">Blackjack</p>
 						</div>
 					</a>
+				</div>
+			</div>
+			<div class=" flex flex-col items-center w-full bg-slate-950 rounded-xl border-[0.5px] border-surface-500 pb-10">
+				<div class=" h-10 flex items-center border-b-2 border-primary-500 mt-2">
+					<p class=" font-extrabold tracking-tight text-1xl">De siste spillene</p>
+				</div>
+				<div class=" w-full px-8 mt-3"> <!-- Div med alle de siste spille som man skal legge inn i -->
+					<div class=" flex h-10 pb-2 items-end justify-between w-full border-b border-surface-400">
+						<div class=" w-[30%] text-surface-300 font-extrabold text-sm">
+							<p>Spill</p>
+						</div>
+						<div class=" w-[30%] text-surface-300 font-extrabold text-sm">
+							<p>Bruker</p>
+						</div>
+						<div class=" flex w-[40%] justify-between text-surface-300 font-extrabold text-sm">
+							<p>Mengde</p>
+							<p>Multiplikator</p>
+							<p>Payout</p>
+						</div>
+					</div>
+					<!-- Her er de forksjellige spillene spillere har spilt -->
+					<div id="DIV_MED_SPILL" class=" relative">
+						<div class=" absolute h-full w-full bg-gradient-to-b from-transparent to-slate-950 z-10"></div>
+						<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400">
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Blackjack</p>
+							</div>
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Erik The Wanker</p>
+							</div>
+							<div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm">
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>10.00</p>
+								</div>
+								<p>2x</p>
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>20.00</p>
+								</div>
+							</div>
+						</div>
+						<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400">
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Blackjack</p>
+							</div>
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Erik The Wanker</p>
+							</div>
+							<div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm">
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>10.00</p>
+								</div>
+								<p>2x</p>
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>20.00</p>
+								</div>
+							</div>
+						</div>
+						<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400">
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Blackjack</p>
+							</div>
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Erik The Wanker</p>
+							</div>
+							<div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm">
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>10.00</p>
+								</div>
+								<p>2x</p>
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>20.00</p>
+								</div>
+							</div>
+						</div>
+						<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400">
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Blackjack</p>
+							</div>
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Erik The Wanker</p>
+							</div>
+							<div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm">
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>10.00</p>
+								</div>
+								<p>2x</p>
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>20.00</p>
+								</div>
+							</div>
+						</div>
+						<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400">
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Blackjack</p>
+							</div>
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Erik The Wanker</p>
+							</div>
+							<div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm">
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>10.00</p>
+								</div>
+								<p>2x</p>
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>20.00</p>
+								</div>
+							</div>
+						</div>
+						<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400">
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Blackjack</p>
+							</div>
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Erik The Wanker</p>
+							</div>
+							<div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm">
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>10.00</p>
+								</div>
+								<p>2x</p>
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>20.00</p>
+								</div>
+							</div>
+						</div>
+						<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400">
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Blackjack</p>
+							</div>
+							<div class=" w-[30%] text-surface-100 font-extrabold text-sm">
+								<p>Erik The Wanker</p>
+							</div>
+							<div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm">
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>10.00</p>
+								</div>
+								<p>2x</p>
+								<div class=" flex">
+									<img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
+									<p>20.00</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
