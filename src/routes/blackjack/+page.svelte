@@ -1,13 +1,22 @@
 <script>
+    import { fade } from 'svelte/transition';
 	import Chat from '../chat.svelte'
 	import Header from '../header.svelte'
+    import { onMount } from 'svelte';
+
+    let onload = false
+
+    onMount(() => {
+        onload = true
+    })
 </script>
 
 <div class="flex justify-between h-screen w-screen">
     <div class="flex flex-col items-center h-screen w-[calc(100%-20.625rem)]">
         <Header/>
         <div class=" min-h-32"></div>
-        <div class="flex items-center justify-between bg-primary-700 h-5/6 w-full max-w-[1200px]">
+        {#if onload}
+        <div class="flex items-center justify-between bg-primary-700 h-5/6 w-full max-w-[1200px]" in:fade={{duration: 1000}}>
             <div class="flex  h-full w-1/3">
 
             </div>
@@ -15,6 +24,7 @@
                 
             </div>
         </div>
+        {/if}
     </div>
      <Chat/>
 </div>

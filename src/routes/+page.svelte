@@ -1,9 +1,14 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import Chat from './chat.svelte'
 	import Header from './header.svelte'
 	import { onMount } from 'svelte';
 
+	let onload = false
+
 	onMount(() => {
+		onload = true
+
 		function startTimer(duration, display) {
 			var timer = duration, minutes, seconds;
 			setInterval(function () {
@@ -22,10 +27,11 @@
 			}, 1000);
 		}
 
-
-		var time = 3600 / 2; // your time in seconds here
-		let display = document.querySelector('#safeTimerDisplay');
-		startTimer(time, display);
+		setTimeout(() => {
+			var time = 3600 / 2; // your time in seconds here
+			let display = document.querySelector('#safeTimerDisplay');
+			startTimer(time, display);
+		})
 	})
 
 	function arrayMedSistSpilteSpillFunc() {
@@ -45,14 +51,15 @@
 	<div class=" w-[calc(100%-20.625rem)] h-screen relative flex flex-col items-center">
 		<Header />
 		<div class=" min-h-32 w-full"></div>
-		<div class=" p-10 max-w-[1200px]">
+		{#if onload}
+		<div class=" p-10 max-w-[1200px]" in:fade={{ duration: 1000 }}>
 			<div class=" flex w-full justify-between items-center p-5 border-primary-600 [border-width:_1px;] rounded-3xl bg-gradient-to-r from-transparent to-primary-900">
 				<div class=" flex w-1/2 justify-between">
 					<div class=" flex items-center mr-2"><img class=" w-40" src="/CoinDrops.png" alt="Coindrops logo"></div>
 					<div class=" w-4/5 flex flex-col ml-3">
-						<div class=" bg-gradient-to-r from-primary-900 to-primary-700 w-24 flex justify-center items-center text-surface-50 font-extrabold tracking-widest border-2 border-primary-600 rounded-md mb-2">
-							<img class=" mr-2 " src="/clock.svg" alt="klokke">
-							<div class=" w-4/6" id="safeTimerDisplay"></div>
+						<div class=" bg-gradient-to-r from-primary-900 to-primary-700 w-24 flex justify-center items-center text-surface-50 font-bold tracking-widest border-2 border-primary-600 rounded-md mb-2 text-sm">
+							<img class="" src="/clock.svg" alt="klokke">
+							<div class=" w-4/6 flex justify-center" id="safeTimerDisplay"></div>
 						</div>
 						<div class=" text-xs">Coindrops skjer hvert <span class=" font-extrabold text-gray-50">30. minutt</span> og gir alle som deltar en del av pengene i <span class=" font-extrabold text-primary-500">Coindrop's potten</span>.</div>
 					</div>
@@ -105,6 +112,7 @@
 				</div>
 			</div>
 		</div>
+		{/if}
 	</div>
 	<Chat />
 </main> 
