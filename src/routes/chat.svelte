@@ -8,7 +8,7 @@
         <div class=" bg-surface-800 flex justify-center items-center h-40 border-b-8 border-surface-900 w-full">
             <img class=" h-28" src="/bakkacino.png" alt="logo bakkacino">
         </div>
-        <div class=" flex flex-col bg-gradient-to-bl from-surface-800 to-primary-900/30 w-[18rem] rounded-md border border-primary-700"> <!-- coindrop -->
+        <div class=" flex flex-col bg-gradient-to-bl from-surface-800 to-primary-900/30 w-[18.7rem] rounded-md border border-primary-700"> <!-- coindrop -->
             <div class=" flex justify-between items-center pt-1 px-4">
                 <p class=" text-3xl font-black bg-gradient-to-br from-primary-600 to-primary-400 bg-clip-text text-transparent box-decoration-clone items-center">COINDROP!</p>
                 <div class=" bg-gradient-to-r from-primary-900/50 to-primary-700/50 w-16 flex justify-center items-center text-surface-50 font-bold tracking-widest border-2 border-primary-600/50 rounded-md text-xs">
