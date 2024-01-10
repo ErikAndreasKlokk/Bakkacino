@@ -24,9 +24,21 @@
         </a>
         <div class=" h-8 border-r-2 border-primary-700 mx-5"></div>
         <button class=" flex items-center justify-between p-1 text-surface-400 font-bold" use:popup={popupFeatured}>Games <span><img src="/expand.svg" alt="expand games"></span></button>
-        <div class="card p-4 w-72 shadow-xl" data-popup="popupFeatured">
-            <div><p>Demo Content</p></div>
-            <div class="arrow bg-surface-100-800-token" />
+        <div class="" data-popup="popupFeatured">
+            <div class=" flex mt-3 bg-surface-800 rounded-lg" >
+                <a href="/blackjack" class=" relative h-40 w-40 bg-primary-900 cursor-pointer rounded-lg overflow-hidden mx-3">
+                    <img src="/blackjack.png" alt="blackjack">
+                    <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
+                        <p class=" font-extrabold tracking-wider text-lg">Blackjack</p>
+                    </div>
+                </a>
+                <a href="/" class=" relative h-40 w-40 bg-primary-900 cursor-pointer rounded-lg overflow-hidden mx-3">
+                    <img src="/blackjack.png" alt="blackjack">
+                    <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
+                        <p class=" font-extrabold tracking-wider text-lg">Blackjack</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <div class=" flex items-center bg-surface-900 p-2 border border-primary-700 rounded-lg">
