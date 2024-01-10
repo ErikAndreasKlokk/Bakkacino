@@ -1,6 +1,20 @@
 <script>
     import { Avatar } from '@skeletonlabs/skeleton';
 	import Message from './message.svelte';
+
+    import { onMount } from 'svelte';
+
+    let ws;
+
+    onMount(() => {
+        ws = new WebSocket("ws://localhost:8000/chat")
+        ws.onopen = function(event) {
+            console.log("Socket connected")
+        }
+        ws.onmessage = function(event) {
+            console.log(event.data)
+        };
+    })
 </script>
 
 <main class="flex h-screen w-[20.625rem] fixed top-0 right-0 z-50 bg-surface-900 flex-col border-l-4 border-surface-800" >
