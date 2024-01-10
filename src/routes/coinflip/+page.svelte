@@ -65,7 +65,7 @@
                 </div>
                 <div class=" flex flex-col border-t border-surface-400"> <!-- Her er diven med alle de aktiv spillene -->
                     <div class=" w-full bg-surface-700 h-24 flex justify-center items-center border-b border-surface-400">
-                        <div class=" flex items-center justify-between w-[95%] h-5/6 hover:scale-[1.01] transition-all">
+                        <div class=" flex items-center justify-between w-[95%] h-5/6 hover:scale-[1.005] transition-all">
                             <div class=" flex items-center">
                                 <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
                                 <p class=" font-bold text-base ml-2">Erik The Wanker</p>
@@ -81,7 +81,7 @@
                     </div>
                     <!--______________________________-->
                     <div class=" w-full bg-surface-700 h-24 flex justify-center items-center border-b border-surface-400">
-                        <div class=" flex items-center justify-between w-[95%] h-5/6 hover:scale-[1.01] transition-all">
+                        <div class=" flex items-center justify-between w-[95%] h-5/6 hover:scale-[1.005] transition-all">
                             <div class=" flex items-center">
                                 <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
                                 <p class=" font-bold text-base ml-2">Erik The Wanker</p>
