@@ -61,7 +61,7 @@
 							<img class="" src="/clock.svg" alt="klokke">
 							<div class=" w-4/6 flex justify-center" id="safeTimerDisplay"></div>
 						</div>
-						<div class=" text-xs">Coindrops skjer hvert <span class=" font-extrabold text-gray-50">30. minutt</span> og gir alle som deltar en del av pengene i <span class=" font-extrabold text-primary-500">Coindrop's potten</span>.</div>
+						<div class=" text-xs font-semibold">Coindrops skjer hvert <span class=" font-extrabold text-gray-50">30. minutt</span> og gir alle som deltar en del av pengene i <span class=" font-extrabold text-primary-500">Coindrop's potten</span>.</div>
 					</div>
 				</div>
 				<div class=" flex shadow-2xl bg-surface-800 w-72 h-20 justify-between items-center rounded-lg">

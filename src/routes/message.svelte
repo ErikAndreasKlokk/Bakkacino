@@ -8,7 +8,7 @@
             <p class="font-bold">Erik</p>
             <small class="opacity-50"></small>
         </header>
-        <p class=" text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam recusandae laudantium aspernatur sint optio reiciendis ut doloremque corrupti, libero nemo tempora ipsam magnam, esse commodi debitis quisquam officiis sapiente. Quo?</p>
+        <p class=" text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <Avatar initials="EK" width="w-12" />
 </div>
