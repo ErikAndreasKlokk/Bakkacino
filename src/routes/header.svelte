@@ -43,7 +43,7 @@
     </div>
     <div class=" flex items-center bg-surface-900 p-2 border border-primary-700 rounded-lg">
         <img class=" h-5" src="/Gold-Coin.png" alt="gold coin">
-        <p class=" mr-3 ml-2 font-extrabold font-family-bakka text-sm">0.00</p>
+        <p class=" mr-3 ml-2 font-black font-family-bakka text-sm">0.00</p>
         <span class="flex h-5.5 mr-1 items-center rounded-lg border border-surface-600 bg-surface-800 px-1.5 pt-0.25 text-[0.625rem] font-bold text-gray-400">COINS</span>
     </div>
     <Avatar initials="EK" background="bg-surface-600" />

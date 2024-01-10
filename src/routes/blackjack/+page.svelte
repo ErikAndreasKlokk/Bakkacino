@@ -11,7 +11,7 @@
     })
 </script>
 
-<div class="flex justify-between h-screen w-screen">
+<div class="flex justify-between h-screen w-screen bg-gradient-to-b from-transparent via-primary-900/20 to-transparent">
     <div class="flex flex-col items-center h-screen w-[calc(100%-20.625rem)]">
         <Header/>
         <div class=" min-h-24"></div>
