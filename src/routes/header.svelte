@@ -32,10 +32,10 @@
                         <p class=" font-extrabold tracking-wider text-lg">Blackjack</p>
                     </div>
                 </a>
-                <a href="/" class=" relative h-40 w-40 cursor-pointer rounded-lg overflow-hidden m-3 border border-transparent hover:border-primary-700/90">
+                <a href="/coinflip" class=" relative h-40 w-40 cursor-pointer rounded-lg overflow-hidden m-3 border border-transparent hover:border-primary-700/90">
                     <img src="/blackjack.png" alt="blackjack">
                     <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
-                        <p class=" font-extrabold tracking-wider text-lg">Blackjack</p>
+                        <p class=" font-extrabold tracking-wider text-lg">Coinflip</p>
                     </div>
                 </a>
             </div>
