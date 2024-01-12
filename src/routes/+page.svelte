@@ -3,6 +3,7 @@
 	import Chat from './chat.svelte'
 	import Header from './header.svelte'
 	import { onMount } from 'svelte';
+	import Spiltespill from './spiltespill.svelte';
 
 	let onload = false
 
@@ -26,6 +27,8 @@
 				}
 			}, 1000);
 		}
+
+		
 
 		setTimeout(() => {
 			var time = 3600 / 2; // your time in seconds here
@@ -53,7 +56,7 @@
 		<div class=" min-h-32 w-full"></div>
 		{#if onload}
 		<div class=" p-10 max-w-[1200px]" in:fade={{ duration: 1000 }}>
-			<div class=" flex w-full justify-between items-center p-5 border-primary-600 [border-width:_1px;] rounded-3xl bg-gradient-to-r from-transparent to-primary-900">
+			<div class=" flex w-full justify-between items-center p-5 border-primary-600 [border-width:_1px;] rounded-3xl bg-gradient-to-r from-transparent to-primary-500/20">
 				<div class=" flex w-1/2 justify-between">
 					<div class=" flex items-center mr-2"><img class=" w-40" src="/CoinDrops.png" alt="Coindrops logo"></div>
 					<div class=" w-4/5 flex flex-col ml-3">
@@ -124,7 +127,7 @@
 					<div id="DIV_MED_SPILL" class=" relative">
 						<div class=" absolute h-full w-full bg-gradient-to-b from-transparent to-neutral-900 to-[99%] z-10"></div>
 						{#each arrayting as div, i}
-							<div class=" flex h-14 items-center justify-between w-full border-b border-surface-400"><div class=" w-[30%] text-surface-100 font-extrabold text-sm"><p>Blackjack</p></div><div class=" w-[30%] text-surface-100 font-extrabold text-sm"><p>Erik The Wanker</p></div><div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm"><div class=" flex"><img class=" h-5" src="/Gold-Coin.png" alt="Gold coin"><p>10.00</p></div><p>2x</p><div class=" flex"><img class=" h-5" src="/Gold-Coin.png" alt="Gold coin"><p>20.00</p></div></div></div>
+							<Spiltespill />
 						{/each}
 					</div>
 				</div>

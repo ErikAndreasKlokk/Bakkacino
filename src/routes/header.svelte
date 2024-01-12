@@ -26,16 +26,28 @@
         <button class=" flex items-center justify-between p-2 text-surface-400 font-bold rounded-lg border border-transparent hover:border-primary-700/90" use:popup={popupFeatured}>Games <span><img src="/expand.svg" alt="expand games"></span></button>
         <div class="" data-popup="popupFeatured">
             <div class=" flex mt-3 bg-surface-800 rounded-lg" >
-                <a href="/blackjack" class=" relative h-40 w-40 cursor-pointer rounded-lg overflow-hidden m-3 border border-transparent hover:border-primary-700/90">
-                    <img src="/blackjack.png" alt="blackjack">
-                    <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
+                <a href="/blackjack" class=" relative h-fit w-56 cursor-pointer rounded-lg overflow-hidden m-3 border border-surface-500 hover:border-primary-700/90">
+                    <img src="/BlackjackHowl.png" alt="blackjack">
+                    <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
                         <p class=" font-extrabold tracking-wider text-lg">Blackjack</p>
                     </div>
                 </a>
-                <a href="/coinflip" class=" relative h-40 w-40 cursor-pointer rounded-lg overflow-hidden m-3 border border-transparent hover:border-primary-700/90">
-                    <img src="/blackjack.png" alt="blackjack">
-                    <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
+                <a href="/coinflip" class=" relative h-fit w-56 cursor-pointer rounded-lg overflow-hidden m-3 border border-surface-500 hover:border-primary-700/90">
+                    <img src="/CoinflipHowl.png" alt="blackjack">
+                    <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
                         <p class=" font-extrabold tracking-wider text-lg">Coinflip</p>
+                    </div>
+                </a>
+                <a href="/" class=" relative h-fit w-56 cursor-pointer rounded-lg overflow-hidden m-3 border border-surface-500 hover:border-primary-700/90">
+                    <img src="/ThewheelHowl.png" alt="blackjack">
+                    <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
+                        <p class=" font-extrabold tracking-wider text-lg">Work in progress</p>
+                    </div>
+                </a>
+                <a href="/" class=" relative h-fit w-56 cursor-pointer rounded-lg overflow-hidden m-3 border border-surface-500 hover:border-primary-700/90">
+                    <img src="/JackpotHowl.png" alt="blackjack">
+                    <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
+                        <p class=" font-extrabold tracking-wider text-lg">Work in progress</p>
                     </div>
                 </a>
             </div>
