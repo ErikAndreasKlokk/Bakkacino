@@ -3,7 +3,7 @@
 </script>
 
 <div class="grid grid-cols-[1fr_auto] gap-2 my-2 ml-4 mr-2">
-    <div class="card p-4 rounded-tr-none space-y-2 border-surface-900">
+    <div class="card py-2 px-4 rounded-tr-none space-y-1 border-surface-900">
         <header class="flex justify-between items-center">
             <p class="font-bold">Erik</p>
             <small class="opacity-50"></small>
