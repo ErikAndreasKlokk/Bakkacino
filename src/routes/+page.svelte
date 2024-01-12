@@ -76,28 +76,28 @@
 					<p class=" font-extrabold text-xl">Bakkacino Orginaler</p>
 				</div>
 				<div class=" flex mt-3 w-full justify-around" >
-					<a href="/blackjack" class=" relative h-52 w-52 bg-primary-900 cursor-pointer rounded-lg overflow-hidden">
-						<img src="/blackjack.png" alt="blackjack">
-						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
-							<p class=" font-extrabold tracking-wider text-lg">Blackjack</p>
+					<a href="/blackjack" class=" relative h-fit w-64 cursor-pointer rounded-lg overflow-hidden">
+						<img src="/BlackjackHowl.png" alt="blackjack">
+						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
+							<p class=" font-extrabold tracking-wide text-lg">Blackjack</p>
 						</div>
 					</a>
-					<a href="/coinflip" class=" relative h-52 w-52 bg-primary-900 cursor-pointer rounded-lg overflow-hidden">
-						<img src="/blackjack.png" alt="blackjack">
-						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
-							<p class=" font-extrabold tracking-wider text-lg">Coinflip</p>
+					<a href="/coinflip" class=" relative h-fit w-64 cursor-pointer rounded-lg overflow-hidden">
+						<img src="/CoinflipHowl.png" alt="blackjack">
+						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
+							<p class=" font-extrabold tracking-wide text-lg">Coinflip</p>
 						</div>
 					</a>
-					<a href="/" class=" relative h-52 w-52 bg-primary-900 cursor-pointer rounded-lg overflow-hidden">
-						<img src="/blackjack.png" alt="blackjack">
-						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
-							<p class=" font-extrabold tracking-wider text-lg">Work in progress</p>
+					<a href="/" class=" relative h-fit w-64 cursor-pointer rounded-lg overflow-hidden">
+						<img src="/ThewheelHowl.png" alt="blackjack">
+						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
+							<p class=" font-extrabold tracking-wide text-lg">Work in progress</p>
 						</div>
 					</a>
-					<a href="/" class=" relative h-52 w-52 bg-primary-900 cursor-pointer rounded-lg overflow-hidden">
-						<img src="/blackjack.png" alt="blackjack">
-						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800 z-10">
-							<p class=" font-extrabold tracking-wider text-lg">Work in progress</p>
+					<a href="/" class=" relative h-fit w-64 cursor-pointer rounded-lg overflow-hidden">
+						<img src="/JackpotHowl.png" alt="blackjack">
+						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
+							<p class=" font-extrabold tracking-wide text-lg">Work in progress</p>
 						</div>
 					</a>
 				</div>

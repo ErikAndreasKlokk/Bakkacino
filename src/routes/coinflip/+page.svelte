@@ -15,8 +15,6 @@
     initializeStores();
 			
     const modalStore = getModalStore();
-                        
-
 
     const modalCreate: ModalSettings = {
         type: 'confirm',
@@ -27,23 +25,11 @@
         response: (r: boolean) => console.log('response:', r),
     };
 
-    const modalJoin: ModalSettings = {
-        type: 'confirm',
-        // Data
-        title: 'Join coinflip spill',
-        body: 'Are you sure you wish to proceed?',
-        // TRUE if confirm pressed, FALSE if cancel pressed
-        response: (r: boolean) => console.log('response:', r),
-    };
-
-
     let onload = false
 
     onMount(() => {
         onload = true
     })
-
-    let onClick = () => modalStore.trigger(modalJoin)
 </script>
 
 <Modal />

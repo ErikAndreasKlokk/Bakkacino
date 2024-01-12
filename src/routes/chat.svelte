@@ -4,17 +4,17 @@
 
     import { onMount } from 'svelte';
 
-    let ws;
+    // let ws;
 
-    onMount(() => {
-        ws = new WebSocket("ws://localhost:8000/chat")
-        ws.onopen = function(event) {
-            console.log("Socket connected")
-        }
-        ws.onmessage = function(event) {
-            console.log(event.data)
-        };
-    })
+    // onMount(() => {
+    //     ws = new WebSocket("ws://localhost:8000/chat")
+    //     ws.onopen = function(event) {
+    //         console.log("Socket connected")
+    //     }
+    //     ws.onmessage = function(event) {
+    //         console.log(event.data)
+    //     };
+    // })
 </script>
 
 <main class="flex h-screen w-[20.625rem] fixed top-0 right-0 z-50 bg-surface-900 flex-col border-l-4 border-surface-800" >
@@ -26,8 +26,8 @@
             <div class=" flex justify-between items-center pt-1 px-4">
                 <p class=" text-3xl font-black bg-gradient-to-br from-primary-600 to-primary-400 bg-clip-text text-transparent box-decoration-clone items-center">COINDROP!</p>
                 <div class=" bg-gradient-to-r from-primary-900/50 to-primary-700/50 w-16 flex justify-center items-center text-surface-50 font-bold tracking-widest border-2 border-primary-600/50 rounded-md text-xs">
-                    <img class=" h-4 pt-[1px]" src="/clock.svg" alt="klokke">
-                    <div class=" w-4/6 flex justify-center" id="safeTimerDisplay">5:00</div>
+                    <img class=" h-4 pt-[1px] w-4" src="/clock.svg" alt="klokke">
+                    <div class=" w-4/6 flex justify-center font-extrabold tracking-wide" id="safeTimerDisplay">5:00</div>
                 </div>
             </div>
             <div class=" py-2 px-4 flex justify-between">
