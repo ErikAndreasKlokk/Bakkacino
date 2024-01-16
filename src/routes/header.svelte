@@ -3,6 +3,7 @@
     import { popup } from '@skeletonlabs/skeleton';
     import type { PopupSettings } from '@skeletonlabs/skeleton';
 	import Routingbutton from './routingbutton.svelte';
+	import Logginn from './logginn.svelte';
     
 
     const popupFeatured: PopupSettings = {
@@ -61,4 +62,5 @@
         <span class="flex h-5.5 mr-1 items-center rounded-lg border border-surface-600 bg-surface-800 px-1.5 pt-0.25 text-[0.625rem] font-bold text-gray-400">COINS</span>
     </div>
     <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
+    <!-- <Logginn parent={}/> -->
 </header>

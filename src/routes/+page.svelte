@@ -35,6 +35,21 @@
 			let display = document.querySelector('#safeTimerDisplay');
 			startTimer(time, display);
 		})
+
+		async function doPost () {
+		const res = await fetch('https://bakkacino.herjus.tech/auth/sign-up', {
+			method: 'POST',
+			body: {
+				"email": 'rudy@gmail.com',
+				"password": 'eeeee'
+			}
+		})
+		
+		const json = await res
+		result = json
+	}
+
+	doPost()
 	})
 
 	function arrayMedSistSpilteSpillFunc() {
