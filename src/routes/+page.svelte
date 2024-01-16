@@ -39,14 +39,15 @@
 		async function doPost () {
 		const res = await fetch('https://bakkacino.herjus.tech/auth/sign-up', {
 			method: 'POST',
-			body: {
+			body: JSON.stringify({
+				"username": 'rudy',
 				"email": 'rudy@gmail.com',
 				"password": 'eeeee'
-			}
+			})
 		})
 		
-		const json = await res
-		result = json
+		const json = await res.json()
+		result = JSON.stringify(json)
 	}
 
 	doPost()
