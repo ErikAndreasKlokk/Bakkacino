@@ -3,11 +3,9 @@
     import { popup } from '@skeletonlabs/skeleton';
     import type { PopupSettings } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
-	import LogIn from './LogIn.svelte';
-	import SignUp from './SignUp.svelte';
     import Cookies from 'js-cookie';
-	import ModalButton from './modalButton.svelte';
-	import Modal2 from './modal2.svelte';
+	import SignInButton from './SignInButton.svelte';
+	import SignUpButton from './signUpButton.svelte';
 
     
 
@@ -19,6 +17,8 @@
 	// Defines which side of your trigger the popup will appear
 	placement: 'bottom',
     }
+
+    let validation = false
  
     onMount(() => {
         let token = Cookies.get("token")
@@ -81,8 +81,12 @@
         <p class=" mr-3 ml-2 font-black font-family-bakka text-sm">0.00</p>
         <span class="flex h-5.5 mr-1 items-center rounded-lg border border-surface-600 bg-surface-800 px-1.5 pt-0.25 text-[0.625rem] font-bold text-gray-400">COINS</span>
     </div>
-    <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
-    <LogIn logInUp="Log In" />
-    <SignUp logInUp="Sign Up" />
-    <ModalButton />
+    {#if validation}
+        <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
+    {:else}
+        <div>
+            <SignUpButton />
+            <SignInButton />
+        </div>
+    {/if}
 </header>
