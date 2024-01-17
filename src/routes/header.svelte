@@ -6,6 +6,8 @@
 	import LogIn from './LogIn.svelte';
 	import SignUp from './SignUp.svelte';
     import Cookies from 'js-cookie';
+	import ModalButton from './modalButton.svelte';
+	import Modal2 from './modal2.svelte';
 
     
 
@@ -82,4 +84,5 @@
     <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
     <LogIn logInUp="Log In" />
     <SignUp logInUp="Sign Up" />
+    <ModalButton />
 </header>

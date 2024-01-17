@@ -1,10 +1,9 @@
 <script>
-	import Modal from './Modal.svelte';
+    import { closeModal } from 'svelte-modals'
     import Cookies from 'js-cookie';
-
-    export let logInUp;
-
-    let showModal = false;
+  
+    // provided by Modals
+    export let isOpen
 
     const formData = {
 		"email": '',
@@ -54,24 +53,32 @@
         }
 
     const cBase = 'card p-4 w-modal shadow-xl space-y-4';
-	const cHeader = 'text-2xl font-bold';
+	  const cHeader = 'text-2xl font-bold mb-4';
     const cForm = 'border border-surface-500 p-4 space-y-4 rounded-container-token';
-</script>
 
-<button on:click={() => (showModal = true)}>{logInUp}</button>
-
-<Modal bind:showModal>
-		<header class={cHeader}>Sign In</header>
-		<!-- Enable for debugging: -->
-		<form class="modal-form {cForm}">
-			<label class="label">
-				<span>Email</span>
-				<input class="input p-1 px-2" type="email" bind:value={formData.email} placeholder="Enter Email..." />
-			</label>
-			<label class="label">
-				<span>Password</span>
-				<input class="input p-1 px-2" type="text" bind:value={formData.password} placeholder="Enter Password..." />
-			</label>
-            <input type="submit" value="Log In" on:click={() => postSignIn()}>
-		</form>
-</Modal>
+  </script>
+  
+  {#if isOpen}
+  <div class=" top-0 right-0 fixed h-full w-screen flex flex-col justify-center items-center py-96 z-50">
+    <div class=" bg-surface-800 p-6 rounded-3xl h-96  ">
+      <header class={cHeader}>Sign In</header>
+      <!-- Enable for debugging: -->
+      <form class="modal-form {cForm}">
+        <label class="label">
+          <span>Email</span>
+          <input class="input p-1 px-2" type="email" bind:value={formData.email} placeholder="Enter Email..." />
+        </label>
+        <label class="label">
+          <span>Password</span>
+          <input class="input p-1 px-2" type="text" bind:value={formData.password} placeholder="Enter Password..." />
+        </label>
+          <div class=" flex justify-between">
+              <button on:click="{closeModal}">OK</button>
+              <input class=" cursor-pointer" type="submit" value="Log In" on:click={() => postSignIn()}>
+          </div>
+      </form>
+    </div>
+  </div>
+  {/if}
+  
+  
