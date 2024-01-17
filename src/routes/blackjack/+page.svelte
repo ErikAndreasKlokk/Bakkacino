@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { draw, fade } from 'svelte/transition';
 	import Chat from '../chat.svelte'
 	import Header from '../header.svelte'
@@ -78,6 +78,9 @@ const cards = [
     let SumPlayerValue = 0
     let SumDealerValue = 0
 
+    let HvilketKort = 2
+    let HvorSkalKortet = 10
+
 function carddraw(){
     PlayerValue = []
     SumPlayerValue = 0
@@ -119,17 +122,31 @@ function PlayerHit(){
     CardValue = cards[RandomCard].value
     PlayerCards = [...PlayerCards, Card]
     PlayerValue = [...PlayerValue, CardValue]  
-    
+    SumPlayerValue = SumPlayerValue + PlayerValue[HvilketKort]
+
+    MakeImage()
 }
 
+function MakeImage(){
+    console.log('Current HvorSkalKortet:', HvorSkalKortet)
+    let SpillerKort = document.getElementById('SpillerKort')
+    let nyttkort = document.createElement('img')
+    nyttkort.src = PlayerCards[HvilketKort]
+    nyttkort.classList.add('h-[11rem]', 'absolute', 'rem', 'z-10')
+    nyttkort.style.left = HvorSkalKortet + 'rem'
+    SpillerKort.appendChild(nyttkort);
+    HvorSkalKortet = HvorSkalKortet + 5
+    HvilketKort = HvilketKort + 1
+
+}
 </script>
 
 <div class="flex justify-between h-screen w-screen bg-gradient-to-b from-transparent via-primary-900/20 to-transparent">
-    <div class="flex flex-col items-center h-screen w-[calc(100%-20.625rem)]">
+    <div class="flex flex-col items-center justify-center h-screen w-[calc(100%-20.625rem)]">
         <Header/>
         <div class=" min-h-24"></div>
         {#if onload}
-        <div class="flex items-center justify-between bg-primary-700 h-full w-full max-w-[1200px]" in:fade={{duration: 1000}}>
+        <div class="flex items-center justify-between bg-primary-700 h-full w-full max-w-[1200px] max-h-[850px]" in:fade={{duration: 1000}}>
             <div id="betting interface" class="flex flex-col justify-center items-center h-full w-1/3">
                 <div id="betting amount buttons" class="flex m-[0.5rem] w-[13rem] justify-between ">
                     <button type="button" class="btn rounded-lg w-[4rem] h-[2.5rem] bg-surface-700 ">1/2</button>
@@ -146,9 +163,9 @@ function PlayerHit(){
                 </div>
             </div>
             <div id="spillbrett" class="flex flex-col items-center justify-between bg-primary-900 h-[92%] w-[58%] mr-[2.1%]">
-                <div id="dealer kort" class="flex justify-between border-[0.1rem] border-black h-[11rem] w-[18rem]">
+                <div id="dealer kort" class="flex relative justify-between border-[0.1rem] mt-[1rem] border-black h-[11rem] w-[18rem]">
                     <img class="h-[11rem]" src={DealerCards[0]} alt="stupid">
-                    <img class="h-[11rem]" src={DealerCards[1]} alt="stupid">
+                    <img class="absolute left-[5rem] h-[11rem]" src={DealerCards[1]} alt="stupid">
                 </div>
                 <div id="Dealer value">
                     <span>{SumDealerValue}</span>
@@ -156,9 +173,10 @@ function PlayerHit(){
                 <div id="player value">
                     <span>{SumPlayerValue}</span>
                 </div>
-                <div id="spiller kort" class="flex justify-between border-[0.1rem] border-black h-[11rem] w-[18rem]">
-                    <img class="h-[11rem]" src={PlayerCards[0]} alt="stupid">
-                    <img class="h-[11rem]" src={PlayerCards[1]} alt="stupid">
+                <div id="SpillerKort" class="flex relative justify-between border-[0.1rem] mb-[1rem] border-black h-[11rem] w-[18rem]">
+                    <img class=" h-[11rem]" src={PlayerCards[0]} alt="stupid">
+                    <img class=" absolute left-[5rem] h-[11rem]" src={PlayerCards[1]} alt="stupid">
+
                 </div>
                     
             </div>
