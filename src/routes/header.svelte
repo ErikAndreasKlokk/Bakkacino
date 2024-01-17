@@ -2,8 +2,11 @@
     import { Avatar } from '@skeletonlabs/skeleton';
     import { popup } from '@skeletonlabs/skeleton';
     import type { PopupSettings } from '@skeletonlabs/skeleton';
-	import Routingbutton from './routingbutton.svelte';
-	import Logginn from './logginn.svelte';
+    import { onMount } from 'svelte';
+	import LogIn from './LogIn.svelte';
+	import SignUp from './SignUp.svelte';
+    import Cookies from 'js-cookie';
+
     
 
     const popupFeatured: PopupSettings = {
@@ -13,10 +16,26 @@
 	target: 'popupFeatured',
 	// Defines which side of your trigger the popup will appear
 	placement: 'bottom',
-};
-					
-					
-
+    }
+ 
+    onMount(() => {
+        let token = Cookies.get("token")
+        async function validate () {
+            fetch("https://bakkacino.herjus.tech/auth/validate", {
+                headers: {
+                   'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                    console.log(data);
+            }).catch(error => {
+                console.log(error);
+                return [];
+            });
+        }
+        validate()
+    })
 </script>
 
 <header class="flex justify-between w-[calc(100%-20.625rem)] h-24 items-center shadow-xl fixed top-0 left-0 z-50 bg-surface-800 px-10">
@@ -24,7 +43,6 @@
         <a class=" h-12 w-12 flex items-center justify-center rounded-lg border border-transparent hover:border-primary-700/90" href="/">
             <img class=" h-8 w-8" src="/home.svg" alt="home">
         </a>
-        <!-- <Routingbutton routing="/" /> -->
         <div class=" h-8 border-r-2 border-primary-700 mx-5"></div>
         <button class=" flex items-center justify-between p-2 text-surface-400 font-bold rounded-lg border border-transparent hover:border-primary-700/90" use:popup={popupFeatured}>Games <span><img src="/expand.svg" alt="expand games"></span></button>
         <div class="" data-popup="popupFeatured">
@@ -62,5 +80,6 @@
         <span class="flex h-5.5 mr-1 items-center rounded-lg border border-surface-600 bg-surface-800 px-1.5 pt-0.25 text-[0.625rem] font-bold text-gray-400">COINS</span>
     </div>
     <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
-    <!-- <Logginn parent={}/> -->
+    <LogIn logInUp="Log In" />
+    <SignUp logInUp="Sign Up" />
 </header>

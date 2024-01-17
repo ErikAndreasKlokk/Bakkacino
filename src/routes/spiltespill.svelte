@@ -3,7 +3,7 @@
         <p>Blackjack</p>
     </div>
     <div class=" w-[30%] text-surface-100 font-extrabold text-sm">
-        <p>Erik The Wanker</p>
+        <p>Erik</p>
     </div>
     <div class=" flex w-[40%] justify-between text-surface-100 font-extrabold text-sm">
         <div class=" flex"><img class=" h-5" src="/Gold-Coin.png" alt="Gold coin">
