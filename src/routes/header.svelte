@@ -6,6 +6,7 @@
     import Cookies from 'js-cookie';
 	import SignInButton from './SignInButton.svelte';
 	import SignUpButton from './signUpButton.svelte';
+    import { user } from '$lib/stores/user.js'
 
     
 
@@ -31,6 +32,7 @@
             .then(response => response.json())
             .then(data => {
                     console.log(data);
+                    user.set(data)
             }).catch(error => {
                 console.log(error);
                 return [];
