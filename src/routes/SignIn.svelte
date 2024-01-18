@@ -11,7 +11,7 @@
 	};
 
     function setCookie(token) {
-        Cookies.set('token', token)
+        Cookies.set('token', token, { secure: true }, { sameSite: 'strict' })
     }
 
     async function postSignIn () {
