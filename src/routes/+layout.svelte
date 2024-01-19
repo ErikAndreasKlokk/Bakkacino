@@ -7,6 +7,7 @@
 	import { initializeStores } from '@skeletonlabs/skeleton';
 	import { Toast, getToastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
+	import Chat from './chat.svelte'
 			
 
 	initializeStores();
@@ -16,3 +17,4 @@
 
 <Toast />
 <slot />
+<Chat />

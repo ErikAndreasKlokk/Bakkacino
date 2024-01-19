@@ -60,5 +60,4 @@
         </div>
         {/if}
     </div>
-     <Chat/>
 </div>
