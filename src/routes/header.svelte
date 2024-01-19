@@ -3,10 +3,11 @@
     import { popup } from '@skeletonlabs/skeleton';
     import type { PopupSettings } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
-    import Cookies from 'js-cookie';
 	import SignInButton from './SignInButton.svelte';
 	import SignUpButton from './signUpButton.svelte';
     import { user } from '../lib/stores/user.js'
+    import Cookies from 'js-cookie';
+    import { coins } from '../lib/stores/coins.js'
 
     
 
@@ -24,7 +25,14 @@
     user.subscribe(() => {
         if ($user.username) {
             validation = true
-        } 
+        }
+        else validation = false
+    })
+    
+    let userCoins = 0
+
+    coins.subscribe(() => {
+        userCoins = $coins.coins
     })
  
     onMount(() => {
@@ -51,6 +59,19 @@
         }
         validate()
     })
+
+    function SignOut() {
+        Cookies.remove('token', { path: '' })
+        user.set({
+          username: '',
+          email: '',
+          password: ''
+        })
+        coins.set({
+            coins: 0
+        })
+    }
+
 </script>
 
 <header class="flex justify-between w-[calc(100%-20.625rem)] h-24 items-center shadow-xl fixed top-0 left-0 z-50 bg-surface-800 px-10">
@@ -91,11 +112,11 @@
     </div>
     <div class=" flex items-center bg-surface-900 p-2 border border-primary-700 rounded-lg">
         <img class=" h-5" src="/Gold-Coin.png" alt="gold coin">
-        <p class=" mr-3 ml-2 font-black font-family-bakka text-sm">0.00</p>
+        <p class=" mr-3 ml-2 font-black font-family-bakka text-sm">{userCoins}</p>
         <span class="flex h-5.5 mr-1 items-center rounded-lg border border-surface-600 bg-surface-800 px-1.5 pt-0.25 text-[0.625rem] font-bold text-gray-400">COINS</span>
     </div>
     {#if validation}
-        <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
+        <Avatar on:click={() => SignOut()} class="border border-transparent hover:border-primary-700/90 cursor-pointer" initials={$user.username} background="bg-surface-600" />
     {:else}
         <div>
             <SignUpButton />

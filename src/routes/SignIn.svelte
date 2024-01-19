@@ -1,7 +1,14 @@
-<script>
+<script lang="ts">
     import { closeModal } from 'svelte-modals'
     import Cookies from 'js-cookie';
 	import { user } from '../lib/stores/user';
+  import { Toast, getToastStore } from '@skeletonlabs/skeleton';
+  import type { ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
+  import axios from 'axios'
+	import { coins } from '../lib/stores/coins';
+
+const toastStore = getToastStore();
+			
   
     // provided by Modals
     export let isOpen
@@ -11,54 +18,47 @@
 		"password": ''
 	};
 
-    function setCookie(token) {
-        Cookies.set('token', token, { secure: true }, { sameSite: 'strict' })
+    async function postSignIn () {
+    async function validate () {
+      let token = Cookies.get("token")
+      fetch("https://bakkacino.herjus.tech/auth/validate", {
+        headers: {
+        'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        user.set({
+          username: data.username,
+          email: data.email,
+          password: data.password
+        })
+        coins.set({
+          coins: data.coins
+        })
+        console.log(data)
+        closeModal()
+      }).catch(error => {
+        console.log(error);
+        return [];
+      });
     }
 
-    async function postSignIn () {
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-
-            var raw = JSON.stringify(formData);
-
-            var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw
-            };
-
-            await fetch("https://bakkacino.herjus.tech/auth/sign-in\n", requestOptions)
-            .then(response => response.json())
-            .then(result => setCookie(result.token))
-            .catch(error => console.log('error', error));
-
-            let token = Cookies.get("token")
-            async function validate () {
-                fetch("https://bakkacino.herjus.tech/auth/validate", {
-                    headers: {
-                    'Authorization': `Bearer ${token}`
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                        console.log(data);
-                        user.set({
-                        username: data.username,
-                        email: data.email,
-                        password: data.password
-                    })
-                    console.log(user)
-                }).catch(error => {
-                    console.log(error);
-                    return [];
-                });
-            }
-            validate()
-
-            if (user.username !== "") {
-              closeModal()
-            }
-        }
+    try {
+      const response = await axios.post('https://bakkacino.herjus.tech/auth/sign-in', {
+        email: formData.email,
+        password: formData.password
+      });
+      Cookies.set('token', response.data.token, { secure: true }, { sameSite: 'strict' })
+      validate()
+    } catch (error) {
+      console.error(error.response.data.detail);
+      const t: ToastSettings = {
+        message: error.response.data.detail,
+      };
+      toastStore.trigger(t);
+    }
+  }
 
     const cBase = 'card p-4 w-modal shadow-xl space-y-4';
 	  const cHeader = 'text-2xl font-bold mb-4';
