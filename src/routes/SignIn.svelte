@@ -1,6 +1,7 @@
 <script>
     import { closeModal } from 'svelte-modals'
     import Cookies from 'js-cookie';
+	import { user } from '../lib/stores/user';
   
     // provided by Modals
     export let isOpen
@@ -41,12 +42,22 @@
                 .then(response => response.json())
                 .then(data => {
                         console.log(data);
+                        user.set({
+                        username: data.username,
+                        email: data.email,
+                        password: data.password
+                    })
+                    console.log(user)
                 }).catch(error => {
                     console.log(error);
                     return [];
                 });
             }
             validate()
+
+            if (user.username !== "") {
+              closeModal()
+            }
         }
 
     const cBase = 'card p-4 w-modal shadow-xl space-y-4';

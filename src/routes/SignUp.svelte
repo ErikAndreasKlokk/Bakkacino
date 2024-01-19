@@ -1,5 +1,7 @@
 <script>
     import { closeModal } from 'svelte-modals'
+	import { user } from '../lib/stores/user';
+  import Cookies from 'js-cookie';
   
     // provided by Modals
     export let isOpen
@@ -9,6 +11,55 @@
 		"email": '',
 		"password": ''
 	};
+
+  function setCookie(token) {
+        Cookies.set('token', token, { secure: true }, { sameSite: 'strict' })
+    }
+
+    async function postSignIn () {
+            let formDataSignIn = {
+              "email": `${formData.email}`,
+              "password": `${formData.password}`
+            }
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify(formDataSignIn);
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw
+            };
+
+            await fetch("https://bakkacino.herjus.tech/auth/sign-in\n", requestOptions)
+            .then(response => response.json())
+            .then(result => setCookie(result.token))
+            .catch(error => console.log('error', error));
+
+            let token = Cookies.get("token")
+            async function validate () {
+                fetch("https://bakkacino.herjus.tech/auth/validate", {
+                    headers: {
+                    'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                        console.log(data + " Sign Up");
+                        user.set({
+                        username: data.username,
+                        email: data.email,
+                        password: data.password
+                    })
+                    console.log(user + " user")
+                }).catch(error => {
+                    console.log(error);
+                    return [];
+                });
+            }
+            validate()
+        }
 
     async function postSignUp () {
             var myHeaders = new Headers();
@@ -24,8 +75,14 @@
 
             await fetch("https://bakkacino.herjus.tech/auth/sign-up\n", requestOptions)
             .then(response => response.json())
-            .then(result => console.log(result))
+            .then(result => console.log(result + " sign in"))
             .catch(error => console.log('error', error));
+        
+        postSignIn()
+
+        if (user.username !== "") {
+          closeModal()
+        }
     }
 
     const cBase = 'card p-4 w-modal shadow-xl space-y-4';

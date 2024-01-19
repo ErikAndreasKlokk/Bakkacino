@@ -6,7 +6,7 @@
     import Cookies from 'js-cookie';
 	import SignInButton from './SignInButton.svelte';
 	import SignUpButton from './signUpButton.svelte';
-    import { user } from '$lib/stores/user.js'
+    import { user } from '../lib/stores/user.js'
 
     
 
@@ -20,6 +20,12 @@
     }
 
     let validation = false
+
+    user.subscribe(() => {
+        if ($user.username) {
+            validation = true
+        } 
+    })
  
     onMount(() => {
         let token = Cookies.get("token")
@@ -32,7 +38,12 @@
             .then(response => response.json())
             .then(data => {
                     console.log(data);
-                    user.set(data)
+                    user.set({
+                        username: data.username,
+                        email: data.email,
+                        password: data.password
+                    })
+                    console.log(user)
             }).catch(error => {
                 console.log(error);
                 return [];
