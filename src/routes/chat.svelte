@@ -4,17 +4,20 @@
 
     import { onMount } from 'svelte';
 
-    // let ws;
+     let ws;
 
-    // onMount(() => {
-    //     ws = new WebSocket("ws://localhost:8000/chat")
-    //     ws.onopen = function(event) {
-    //         console.log("Socket connected")
-    //     }
-    //     ws.onmessage = function(event) {
-    //         console.log(event.data)
-    //     };
-    // })
+    let messages = [];
+
+     onMount(() => {
+         ws = new WebSocket("wss://bakkacino.herjus.tech/chat")
+         ws.onopen = function(event) {
+             console.log("Socket connected")
+         }
+         ws.onmessage = function(event) {
+             const data = JSON.parse(event.data)
+             messages = [data, ...messages]
+         };
+     })
 </script>
 
 <main class="flex h-screen w-[20.625rem] fixed top-0 right-0 z-30 bg-surface-900 flex-col border-l-4 border-surface-800" >
@@ -46,14 +49,9 @@
         </div>
     </div>
     <div class=" h-full overflow-scroll flex flex-col-reverse">
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-        <Message />
+        {#each messages as message}
+            <Message user={message.user} message={message.value} />
+        {/each}
     </div>
     <div class=" h-24 flex items-center justify-center">
         <input class=" h-4/6 w-5/6 bg-surface-800 border border-surface-400 rounded-md text-surface-100 text-sm px-2" placeholder="Write your message here..." type="text">

@@ -1,14 +1,17 @@
 <script>
     import { Avatar } from '@skeletonlabs/skeleton';
+
+    export let user;
+    export let message;
 </script>
 
 <div class="grid grid-cols-[1fr_auto] gap-2 my-2 ml-4 mr-2">
     <div class="card py-2 px-4 rounded-tr-none space-y-1 border-surface-900">
         <header class="flex justify-between items-center">
-            <p class="font-bold">Erik</p>
+            <p class="font-bold">{user}</p>
             <small class="opacity-50"></small>
         </header>
-        <p class=" text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class=" text-sm">{message}</p>
     </div>
     <Avatar initials="EK" width="w-12" />
 </div>
