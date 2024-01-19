@@ -13,5 +13,5 @@
         </header>
         <p class=" text-sm">{message}</p>
     </div>
-    <Avatar initials="EK" width="w-12" />
+    <Avatar initials={user} width="w-12" />
 </div>

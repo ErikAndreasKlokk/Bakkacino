@@ -1,6 +1,5 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import Chat from './chat.svelte'
 	import Header from './header.svelte'
 	import { onMount } from 'svelte';
 	import Spiltespill from './spiltespill.svelte';
@@ -135,5 +134,4 @@
 		</div>
 		{/if}
 	</div>
-	<Chat />
 </main> 
