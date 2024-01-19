@@ -11,7 +11,7 @@
     })
 
 const cards = [
-    { value: 1, link: '/cards/AD.svg' },
+    { value: 11, link: '/cards/AD.svg' },
     { value: 2, link: '/cards/2D.svg' },
     { value: 3, link: '/cards/3D.svg' },
     { value: 4, link: '/cards/4D.svg' },
@@ -24,7 +24,7 @@ const cards = [
     { value: 10, link: '/cards/JD.svg' },
     { value: 10, link: '/cards/QD.svg' },
     { value: 10, link: '/cards/KD.svg' },
-    { value: 1, link: '/cards/AH.svg' },
+    { value: 11, link: '/cards/AH.svg' },
     { value: 2, link: '/cards/2H.svg' },
     { value: 3, link: '/cards/3H.svg' },
     { value: 4, link: '/cards/4H.svg' },
@@ -37,7 +37,7 @@ const cards = [
     { value: 10, link: '/cards/JH.svg' },
     { value: 10, link: '/cards/QH.svg' },
     { value: 10, link: '/cards/KH.svg' },
-    { value: 1, link: '/cards/AS.svg' },
+    { value: 11, link: '/cards/AS.svg' },
     { value: 2, link: '/cards/2S.svg' },
     { value: 3, link: '/cards/3S.svg' },
     { value: 4, link: '/cards/4S.svg' },
@@ -50,7 +50,7 @@ const cards = [
     { value: 10, link: '/cards/JS.svg' },
     { value: 10, link: '/cards/QS.svg' },
     { value: 10, link: '/cards/KS.svg' },
-    { value: 1, link: '/cards/AC.svg' },
+    { value: 11, link: '/cards/AC.svg' },
     { value: 2, link: '/cards/2C.svg' },
     { value: 3, link: '/cards/3C.svg' },
     { value: 4, link: '/cards/4C.svg' },
@@ -81,11 +81,16 @@ const cards = [
     let DealerHvilketKort = 1
     let HvilketKort = 2
 
+    // let DealerViseVerdi: any = SumDealerValue
+    // let PlayerViseVerdi: any = SumPlayerValue
+
     let DealerHvorSkalKortet = 5
     let HvorSkalKortet = 10
     let CardDrawButton = false
     let HitButton = true
     let StandButton = true
+
+    let WinLost =""
     
 function carddraw(){
     CardDrawButton = true
@@ -107,6 +112,9 @@ function carddraw(){
     SumDealerValue = 0
     SumPlayerValue = 0
 
+    WinLost = ""
+
+    
 
     let SpillerKort = document.getElementById('SpillerKort')
     let DealerKort = document.getElementById('DealerKort')
@@ -136,30 +144,13 @@ function carddraw(){
             SumPlayerValue += PlayerValue[j];
             }
         
-            RandomCard = Math.round(Math.random() * 51)
-            Card = cards[RandomCard].link
-            CardValue = cards[RandomCard].value
-            DealerCards = [...DealerCards, Card]
-            DealerValue = [...DealerValue, CardValue]  
-            SumDealerValue = 0
+        DealerHit()
 
-        for (let j = 0; j < DealerValue.length; j++) {
-                SumDealerValue += DealerValue[j];
-                }
+        DealerMakeImage()
 
         console.log('Current DealerHvorSkalKortet:', DealerHvorSkalKortet)
         DealerKort = document.getElementById('DealerKort')
         let Dealernyttkort = document.createElement('img')
-        Dealernyttkort.src = DealerCards[DealerHvilketKort]
-        Dealernyttkort.classList.add('h-[100%]', 'absolute', 'z-10')
-        Dealernyttkort.style.left = DealerHvorSkalKortet + 'rem'
-        DealerKort.appendChild(Dealernyttkort);
-        DealerHvorSkalKortet = DealerHvorSkalKortet + 5
-        DealerHvilketKort = DealerHvilketKort + 1
-
-        console.log('Current DealerHvorSkalKortet:', DealerHvorSkalKortet)
-        DealerKort = document.getElementById('DealerKort')
-        Dealernyttkort = document.createElement('img')
         Dealernyttkort.src = '/cards/1B.svg'
         Dealernyttkort.classList.add('h-[100%]', 'absolute', 'z-10')
         Dealernyttkort.style.left = DealerHvorSkalKortet + 'rem'
@@ -180,7 +171,20 @@ function PlayerHit(){
     for (let j = 0; j < PlayerValue.length; j++) {
             SumPlayerValue += PlayerValue[j];
             }
-
+    // if (PlayerValue.includes(11)){
+    //     PlayerViseVerdi = `${PlayerViseVerdi - 10} '/' ${PlayerViseVerdi}`
+    // }
+    if (SumPlayerValue > 21){
+        if (PlayerValue.includes(11)){
+            SumPlayerValue = SumPlayerValue - 10
+        }
+        else{
+            CardDrawButton = false
+        HitButton = true
+        StandButton = true
+        WinLost = "Du Tapte Taper :)"
+        }
+    }
     MakeImage()
 }
 
@@ -204,9 +208,15 @@ function DealerHit(){
     DealerCards = [...DealerCards, Card]
     DealerValue = [...DealerValue, CardValue]  
     SumDealerValue = 0
+    let HvorAce = DealerValue.indexOf(11)
     for (let j = 0; j < DealerValue.length; j++) {
-        SumDealerValue += DealerValue[j];
+        SumDealerValue += DealerValue[j]
         }
+    if (SumDealerValue > 21){
+        if (CardValue = 11){
+            DealerValue[HvorAce] = 1
+        }
+    }    
 }
 
 function DealerMakeImage(){
@@ -222,22 +232,51 @@ function DealerMakeImage(){
 
 }
 function PlayerStand(){
-    console.log("wasup")
+    console.log("Stand Button Hit")
     CardDrawButton = false
     HitButton = true
     StandButton = true
-    while (true){
-        if (SumDealerValue >= 17){
-            break
-        }
-
+    while (SumDealerValue < 17){
+        
         DealerHit()
 
         DealerMakeImage()
 
+        SumDealerValue = 0
+        for (let j = 0; j < DealerValue.length; j++) {
+        SumDealerValue += DealerValue[j]
+            }
         console.log(DealerCards)
         console.log(DealerValue)
+        console.log('SumDealerValue(PlayerStand):', SumDealerValue)
     }
+    if (SumDealerValue > 21){
+        
+            CardDrawButton = false
+            HitButton = true
+            StandButton = true
+            WinLost = "Du Vant :("
+        
+    }
+    else if (SumDealerValue < SumPlayerValue){
+        CardDrawButton = false
+        HitButton = true
+        StandButton = true
+        WinLost = "Du Vant :("
+    }
+    else if (SumDealerValue == SumPlayerValue){
+        CardDrawButton = false
+        HitButton = true
+        StandButton = true
+        WinLost = "Bet Ble Uavgjort :|"
+    }
+    else if (SumDealerValue > SumPlayerValue){
+        CardDrawButton = false
+        HitButton = true
+        StandButton = true
+        WinLost = "Du Tapte Taper :)"
+    }
+    console.log('SumDealerValue(evaluation):', SumDealerValue)
     }
 
 
@@ -271,7 +310,8 @@ function PlayerStand(){
                 <div id="Dealer value">
                     <span>{SumDealerValue}</span>
                 </div>
-                <div id="spacing" class="h-[18rem] w-[10rem]">
+                <div id="spacing" class="flex items-center justify-center h-[18rem] w-[10rem]">
+                    <span>{WinLost}</span>
                 </div>
                 <div id="player value">
                     <span>{SumPlayerValue}</span>
