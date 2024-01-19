@@ -208,13 +208,13 @@ function DealerHit(){
     DealerCards = [...DealerCards, Card]
     DealerValue = [...DealerValue, CardValue]  
     SumDealerValue = 0
-    let HvorAce = DealerValue.indexOf(11)
+    let DealerHvorAce = DealerValue.indexOf(11)
     for (let j = 0; j < DealerValue.length; j++) {
         SumDealerValue += DealerValue[j]
         }
     if (SumDealerValue > 21){
         if (CardValue = 11){
-            DealerValue[HvorAce] = 1
+            DealerValue[DealerHvorAce] = 1
         }
     }    
 }
@@ -324,7 +324,6 @@ function PlayerStand(){
         </div>
         {/if}
     </div>
-     <Chat/>
 </div>
 
 <style>
