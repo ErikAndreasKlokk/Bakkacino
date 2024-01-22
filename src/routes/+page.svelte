@@ -49,8 +49,7 @@
 
 </script>
 
-<main class=" w-screen h-screen flex justify-between overflow-x-hidden font-sans bg-gradient-to-b from-transparent via-primary-900/20 to-transparent">
-	<div class=" w-[calc(100%-20.625rem)] h-screen relative flex flex-col items-center">
+	<div class=" w-[calc(100%-20.625rem)] h-screen relative flex flex-col items-center font-sans bg-gradient-to-b from-transparent via-primary-900/20 to-transparent">
 		<Header />
 		<div class=" min-h-32 w-full"></div>
 		{#if onload}
@@ -133,5 +132,4 @@
 			</div>
 		</div>
 		{/if}
-	</div>
-</main> 
+	</div> 
