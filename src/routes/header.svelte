@@ -45,7 +45,6 @@
             })
             .then(response => response.json())
             .then(data => {
-                    console.log(data);
                     user.set({
                         username: data.username,
                         email: data.email,
@@ -54,7 +53,6 @@
                     coins.set({
                         coins: data.coins
                     })
-                    console.log(user)
             }).catch(error => {
                 console.log(error);
                 return [];

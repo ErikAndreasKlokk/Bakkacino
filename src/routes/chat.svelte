@@ -9,21 +9,24 @@
     let messages = [];
 
     onMount(() => {
-
         validate.subscribe(() => {
             if ($validate.validation) {
-                    ws = new WebSocket(`wss://bakkacino.herjus.tech/chat/${Cookies.get("token")}`)
-                    console.log("auth chat")
-                } else {
-                    ws = new WebSocket("wss://bakkacino.herjus.tech/chat")
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.close()
                 }
-                ws.onopen = function(event) {
-                    console.log("Socket connected")
+                ws = new WebSocket(`wss://bakkacino.herjus.tech/chat/${Cookies.get("token")}`)
+            } else {
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.close()
                 }
-                ws.onmessage = function(event) {
-                    const data = JSON.parse(event.data)
-                    messages = [data, ...messages]
-                };
+                ws = new WebSocket("wss://bakkacino.herjus.tech/chat")
+            }
+            ws.onopen = function(event) {
+            }
+            ws.onmessage = function(event) {
+                const data = JSON.parse(event.data)
+                messages = [data, ...messages]
+            };
         })
     })
 
