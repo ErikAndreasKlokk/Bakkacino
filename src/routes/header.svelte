@@ -8,6 +8,7 @@
     import { user } from '../lib/stores/user.js'
     import Cookies from 'js-cookie';
     import { coins } from '../lib/stores/coins.js'
+    import { validate } from '../lib/stores/validation.js'
 
     
 
@@ -20,13 +21,12 @@
 	placement: 'bottom',
     }
 
-    let validation = false
 
     user.subscribe(() => {
         if ($user.username) {
-            validation = true
+            $validate.validation = true
         }
-        else validation = false
+        else $validate.validation = false
     })
     
     let userCoins = 0
@@ -122,7 +122,7 @@
             </div>
         </div>
         <div class=" flex flex-1 justify-end">
-            {#if validation}
+            {#if $validate.validation}
                 <Avatar on:click={() => SignOut()} class="border border-transparent hover:border-primary-700/90 cursor-pointer" initials={$user.username} background="bg-surface-600" />
             {:else}
                 <div>

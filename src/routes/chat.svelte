@@ -1,23 +1,39 @@
 <script>
-    import { Avatar } from '@skeletonlabs/skeleton';
 	import Message from './message.svelte';
-
+    import { validate } from '../lib/stores/validation.js'
     import { onMount } from 'svelte';
+    import Cookies from 'js-cookie';
 
-     let ws;
 
+    let ws;
     let messages = [];
 
-     onMount(() => {
-         ws = new WebSocket("wss://bakkacino.herjus.tech/chat")
-         ws.onopen = function(event) {
-             console.log("Socket connected")
-         }
-         ws.onmessage = function(event) {
-             const data = JSON.parse(event.data)
-             messages = [data, ...messages]
-         };
-     })
+    onMount(() => {
+
+        validate.subscribe(() => {
+            if ($validate.validation) {
+                    ws = new WebSocket(`wss://bakkacino.herjus.tech/chat/${Cookies.get("token")}`)
+                    console.log("auth chat")
+                } else {
+                    ws = new WebSocket("wss://bakkacino.herjus.tech/chat")
+                }
+                ws.onopen = function(event) {
+                    console.log("Socket connected")
+                }
+                ws.onmessage = function(event) {
+                    const data = JSON.parse(event.data)
+                    messages = [data, ...messages]
+                };
+        })
+    })
+
+    let message_field;
+
+    function sendMessage(e) {
+        e.preventDefault();
+        ws.send(message_field)
+        message_field = "";
+    }
 </script>
 
 <main class="flex h-screen w-[20.625rem] fixed top-0 right-0 z-30 bg-surface-900 flex-col border-l-4 border-surface-800" >
@@ -53,7 +69,7 @@
             <Message user={message.user} message={message.value} />
         {/each}
     </div>
-    <div class=" h-24 flex items-center justify-center">
-        <input class=" h-4/6 w-5/6 bg-surface-800 border border-surface-400 rounded-md text-surface-100 text-sm px-2" placeholder="Write your message here..." type="text">
-    </div>
+    <form on:submit={sendMessage} class=" h-24 flex items-center justify-center">
+        <input bind:value={message_field} disabled={!$validate.validation} class=" disabled:cursor-not-allowed h-4/6 w-5/6 bg-surface-800 border border-surface-400 rounded-md text-surface-100 text-sm px-2" placeholder={$validate.validation ? 'Write your message here...' : 'Log In to type a message...'} type="text">
+    </form>
 </main>
