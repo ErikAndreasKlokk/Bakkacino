@@ -166,28 +166,27 @@ function PlayerHit(){
     Card = cards[RandomCard].link
     CardValue = cards[RandomCard].value
     PlayerCards = [...PlayerCards, Card]
-    PlayerValue = [...PlayerValue, CardValue]  
+    PlayerValue = [...PlayerValue, CardValue] 
+    let PlayerHvorAce = PlayerValue.indexOf(11) 
     SumPlayerValue = 0
     for (let j = 0; j < PlayerValue.length; j++) {
             SumPlayerValue += PlayerValue[j];
             }
-    // if (PlayerValue.includes(11)){
-    //     PlayerViseVerdi = `${PlayerViseVerdi - 10} '/' ${PlayerViseVerdi}`
-    // }
     if (SumPlayerValue > 21){
         if (PlayerValue.includes(11)){
-            SumPlayerValue = SumPlayerValue - 10
+            PlayerValue[PlayerHvorAce] = 1
+            SumPlayerValue = 0
+            for (let j = 0; j < PlayerValue.length; j++) {
+            SumPlayerValue += PlayerValue[j];
+            }
         }
+        
         else{
-            CardDrawButton = false
-        HitButton = true
-        StandButton = true
-        WinLost = "Du Tapte Taper :)"
-        }
+            PlayerLoose()
+    }
     }
     MakeImage()
 }
-
 function MakeImage(){
     console.log('Current HvorSkalKortet:', HvorSkalKortet)
     let SpillerKort = document.getElementById('SpillerKort')
@@ -213,8 +212,12 @@ function DealerHit(){
         SumDealerValue += DealerValue[j]
         }
     if (SumDealerValue > 21){
-        if (CardValue = 11){
+        if (DealerValue.includes(11)){
             DealerValue[DealerHvorAce] = 1
+            SumDealerValue = 0
+            for (let j = 0; j < DealerValue.length; j++) {
+            SumDealerValue += DealerValue[j]
+        }
         }
     }    
 }
@@ -251,34 +254,38 @@ function PlayerStand(){
         console.log('SumDealerValue(PlayerStand):', SumDealerValue)
     }
     if (SumDealerValue > 21){
-        
-            CardDrawButton = false
-            HitButton = true
-            StandButton = true
-            WinLost = "Du Vant :("
-        
+        PlayerWin()
     }
     else if (SumDealerValue < SumPlayerValue){
-        CardDrawButton = false
-        HitButton = true
-        StandButton = true
-        WinLost = "Du Vant :("
+        PlayerWin()
     }
     else if (SumDealerValue == SumPlayerValue){
-        CardDrawButton = false
-        HitButton = true
-        StandButton = true
-        WinLost = "Bet Ble Uavgjort :|"
+        GameDraw()
     }
     else if (SumDealerValue > SumPlayerValue){
+        PlayerLoose()
+    }
+    console.log('SumDealerValue(evaluation):', SumDealerValue)
+    }
+
+    function PlayerLoose(){
         CardDrawButton = false
         HitButton = true
         StandButton = true
         WinLost = "Du Tapte Taper :)"
     }
-    console.log('SumDealerValue(evaluation):', SumDealerValue)
+    function PlayerWin(){
+        CardDrawButton = false
+        HitButton = true
+        StandButton = true
+        WinLost = "Du Vant :("
     }
-
+    function GameDraw(){
+        CardDrawButton = false
+        HitButton = true
+        StandButton = true
+        WinLost = "Bet Ble Uavgjort :|"
+    }
 
 </script>
 
