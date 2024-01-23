@@ -9,21 +9,24 @@
     let messages = [];
 
     onMount(() => {
-
         validate.subscribe(() => {
             if ($validate.validation) {
-                    ws = new WebSocket(`wss://bakkacino.herjus.tech/chat/${Cookies.get("token")}`)
-                    console.log("auth chat")
-                } else {
-                    ws = new WebSocket("wss://bakkacino.herjus.tech/chat")
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.close()
                 }
-                ws.onopen = function(event) {
-                    console.log("Socket connected")
+                ws = new WebSocket(`wss://bakkacino.herjus.tech/chat/${Cookies.get("token")}`)
+            } else {
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.close()
                 }
-                ws.onmessage = function(event) {
-                    const data = JSON.parse(event.data)
-                    messages = [data, ...messages]
-                };
+                ws = new WebSocket("wss://bakkacino.herjus.tech/chat")
+            }
+            ws.onopen = function(event) {
+            }
+            ws.onmessage = function(event) {
+                const data = JSON.parse(event.data)
+                messages = [data, ...messages]
+            };
         })
     })
 
@@ -66,7 +69,7 @@
     </div>
     <div class=" h-full overflow-scroll flex flex-col-reverse">
         {#each messages as message}
-            <Message user={message.user} message={message.value} />
+            <Message username={message.user} message={message.value} />
         {/each}
     </div>
     <form on:submit={sendMessage} class=" h-24 flex items-center justify-center">
