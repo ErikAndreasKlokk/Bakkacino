@@ -71,7 +71,7 @@ const toastStore = getToastStore();
     <div class=" bg-surface-800 p-6 rounded-3xl h-96  ">
       <header class={cHeader}>Sign In</header>
       <!-- Enable for debugging: -->
-      <form class="modal-form {cForm} flex flex-col justify-between">
+      <form on:submit={() => postSignIn()} class="modal-form {cForm} flex flex-col justify-between">
         <div>
           <label class="label">
             <span>Email</span>
@@ -79,12 +79,13 @@ const toastStore = getToastStore();
           </label>
           <label class="label mt-5">
             <span>Password</span>
-            <input class="input p-1 px-2" type="text" bind:value={formData.password} placeholder="Enter Password..." />
+            <input class="input p-1 px-2" type="password" bind:value={formData.password} placeholder="Enter Password..." />
           </label>
         </div>
+        <input type="submit" class=" w-0 m-0 p-0 h-0 !mt-0">
           <div class=" flex justify-between">
               <button class=" bg-surface-600 border border-surface-400 rounded-xl p-1 px-3 active:scale-95" on:click="{closeModal}">Cancel</button>
-              <input class=" cursor-pointer bg-primary-700/30 border border-primary-500 px-4 rounded-xl active:scale-95" type="submit" value="Sign In" on:click={() => postSignIn()}>
+              <input class=" cursor-pointer bg-primary-700/30 border border-primary-500 px-4 rounded-xl active:scale-95" type="submit" value="Sign In">
           </div>
       </form>
     </div>
