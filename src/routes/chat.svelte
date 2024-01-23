@@ -36,6 +36,10 @@
         e.preventDefault();
         ws.send(message_field)
         message_field = "";
+
+        if (messages.length > 50) {
+            messages.pop()
+        }
     }
 </script>
 
