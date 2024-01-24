@@ -73,7 +73,7 @@
     </div>
     <div class=" h-full overflow-scroll flex flex-col-reverse">
         {#each messages as message}
-            <Message username={message.user} message={message.value} />
+            <Message username={message.user} message={message.value} level={message.level}/>
         {/each}
     </div>
     <form on:submit={sendMessage} class=" h-24 flex items-center justify-center">

@@ -75,11 +75,11 @@ const toastStore = getToastStore();
         <div>
           <label class="label">
             <span>Email</span>
-            <input class="input p-1 px-2" type="email" bind:value={formData.email} placeholder="Enter Email..." />
+            <input class="input rounded-lg p-1 px-2" type="email" bind:value={formData.email} placeholder="Enter Email..." />
           </label>
           <label class="label mt-5">
             <span>Password</span>
-            <input class="input p-1 px-2" type="password" bind:value={formData.password} placeholder="Enter Password..." />
+            <input class="input rounded-lg p-1 px-2" type="password" bind:value={formData.password} placeholder="Enter Password..." />
           </label>
         </div>
         <input type="submit" class=" w-0 m-0 p-0 h-0 !mt-0">
