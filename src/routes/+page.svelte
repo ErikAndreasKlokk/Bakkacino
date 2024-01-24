@@ -50,7 +50,6 @@
 </script>
 
 	<div class=" w-[calc(100%-20.625rem)] h-screen relative flex flex-col items-center font-sans bg-gradient-to-b from-transparent via-primary-900/20 to-transparent">
-		<Header />
 		<div class=" min-h-32 w-full"></div>
 		{#if onload}
 		<div class=" p-10 max-w-[1200px]" in:fade={{ duration: 1000 }}>

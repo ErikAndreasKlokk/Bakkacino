@@ -8,6 +8,7 @@
 	import { Toast, getToastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
 	import Chat from './chat.svelte'
+	import Header from './header.svelte';
 			
 
 	initializeStores();
@@ -16,5 +17,6 @@
 
 
 <Toast />
+<Header />
 <slot />
 <Chat />

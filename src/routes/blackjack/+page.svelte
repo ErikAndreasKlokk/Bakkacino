@@ -279,7 +279,6 @@ function PlayerStand(){
 
 <div class="flex justify-between h-screen w-screen bg-gradient-to-b from-transparent via-primary-900/20 to-transparent">
     <div class="flex flex-col items-center justify-center h-screen w-[calc(100%-20.625rem)]">
-        <Header/>
         <div class=" min-h-24"></div>
         {#if onload}
         <div class="flex items-center justify-between bg-primary-700 h-full w-full max-w-[1200px] max-h-[850px]" in:fade={{duration: 1000}}>
