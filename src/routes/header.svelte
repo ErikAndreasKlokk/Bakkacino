@@ -125,7 +125,7 @@
             {#if $validate.validation}
                 <Avatar on:click={() => SignOut()} class="border border-transparent hover:border-primary-700/90 cursor-pointer" initials={$user.username} background="bg-surface-600" />
             {:else}
-                <div>
+                <div class=" flex h-9 w-[12rem]">
                     <SignUpButton />
                     <SignInButton />
                 </div>
