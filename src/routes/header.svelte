@@ -50,9 +50,11 @@
                         email: data.email,
                         password: data.password
                     })
-                    coins.set({
-                        coins: data.coins
-                    })
+                    if (data.coins) {
+                        coins.set({
+                            coins: data.coins
+                        })
+                    }
             }).catch(error => {
                 console.log(error);
                 return [];
