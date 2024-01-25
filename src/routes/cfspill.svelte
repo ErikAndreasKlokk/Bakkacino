@@ -18,8 +18,6 @@
         // TRUE if confirm pressed, FALSE if cancel pressed
         response: (r: boolean) => console.log('response:', r),
     };
-
-    /* on:click={() => modalStore.trigger(modalJoin)} */
 </script>
 
 <Modal />
@@ -27,7 +25,7 @@
     <div class=" flex items-center justify-between w-[95%] h-5/6 hover:scale-[1.005] transition-all">
         <div class=" flex items-center">
             <Avatar class="border border-transparent hover:border-primary-700/90" initials="EK" background="bg-surface-600" />
-            <p class=" font-bold text-base ml-2">Erik The Wanker</p>
+            <p class=" font-bold text-base ml-2">Erik</p>
         </div>
         <div class=" flex items-center">
             <img class=" h-5" src="/Gold-Coin.png" alt="coin">
