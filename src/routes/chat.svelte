@@ -65,8 +65,8 @@
                     </div>
                 </div>
                 <div class=" flex flex-col items-center justify-evenly h-full">
-                    <p class=" font-extrabold text-sm tracking-wide">30 <span class=" text-surface-400 text-xs tracking-normal font-bold">joinet</span></p>
-                    <button class=" bg-primary-600/50 border border-primary-600 px-5 rounded-md font-bold ">Join</button>
+                    <p class=" font-extrabold text-sm tracking-wide">30 <span class=" text-surface-400 text-xs tracking-normal font-bold">Deltat</span></p>
+                    <button class=" bg-primary-600/50 border border-primary-600 px-5 rounded-md font-bold ">Delta</button>
                 </div>
             </div>
         </div>

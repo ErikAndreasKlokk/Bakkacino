@@ -93,7 +93,7 @@
                 <img class=" h-8 w-8" src="/home.svg" alt="home">
             </a>
             <div class=" h-8 border-r-2 border-primary-700 mx-5"></div>
-            <button class=" flex items-center justify-between p-2 text-surface-400 font-bold rounded-lg border border-transparent hover:border-primary-700/90" use:popup={popupFeatured}>Games <span><img src="/expand.svg" alt="expand games"></span></button>
+            <button class=" flex items-center justify-between p-2 text-surface-400 font-bold rounded-lg border border-transparent hover:border-primary-700/90" use:popup={popupFeatured}>Spill <span><img src="/expand.svg" alt="expand games"></span></button>
             <div class="" data-popup="popupFeatured">
                 <div class=" flex mt-3 bg-surface-800 rounded-lg" >
                     <a href="/blackjack" class=" relative h-fit w-56 cursor-pointer rounded-lg overflow-hidden m-3 border border-surface-500 hover:border-primary-700/90">
