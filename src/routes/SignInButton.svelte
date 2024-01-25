@@ -8,7 +8,7 @@
     }
   </script>
   
-  <button on:click="{handleClick}" class=" bg-primary-700/80 border border-primary-500 p-1 px-3 rounded-l-none rounded-lg active:scale-95 w-full">Sign In</button>
+  <button on:click="{handleClick}" class=" bg-primary-700/80 border border-primary-500 p-1 px-3 rounded-l-none rounded-lg active:scale-95 w-full border-l-0">Logg Inn</button>
   <Modals>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
