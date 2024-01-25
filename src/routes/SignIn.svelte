@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { closeModal } from 'svelte-modals'
-    import Cookies from 'js-cookie';
+  import { closeModal } from 'svelte-modals'
+  import Cookies from 'js-cookie';
 	import { user } from '../lib/stores/user';
   import { Toast, getToastStore } from '@skeletonlabs/skeleton';
   import type { ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
