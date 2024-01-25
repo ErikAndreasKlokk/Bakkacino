@@ -58,7 +58,8 @@
                     user.set({
                         username: data.username,
                         email: data.email,
-                        password: data.password
+                        password: data.password,
+                        level: data.level
                     })
                     if (data.coins) {
                         coins.set({
@@ -78,7 +79,8 @@
         user.set({
           username: '',
           email: '',
-          password: ''
+          password: '',
+          level: Number
         })
         coins.set({
             coins: 0

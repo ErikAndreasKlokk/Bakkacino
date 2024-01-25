@@ -31,7 +31,8 @@ const toastStore = getToastStore();
         user.set({
           username: data.username,
           email: data.email,
-          password: data.password
+          password: data.password,
+          level: data.level
         })
         coins.set({
           coins: data.coins
