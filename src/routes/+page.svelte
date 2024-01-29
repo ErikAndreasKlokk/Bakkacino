@@ -88,10 +88,10 @@
 							<p class=" font-extrabold tracking-wide text-lg">Coinflip</p>
 						</div>
 					</a>
-					<a href="/" class=" relative h-fit w-64 cursor-pointer rounded-lg overflow-hidden">
+					<a href="/wheel" class=" relative h-fit w-64 cursor-pointer rounded-lg overflow-hidden">
 						<img src="/ThewheelHowl.png" alt="blackjack">
 						<div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
-							<p class=" font-extrabold tracking-wide text-lg">Work in progress</p>
+							<p class=" font-extrabold tracking-wide text-lg">Wheel</p>
 						</div>
 					</a>
 					<a href="/" class=" relative h-fit w-64 cursor-pointer rounded-lg overflow-hidden">

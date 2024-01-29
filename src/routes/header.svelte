@@ -111,10 +111,10 @@
                             <p class=" font-extrabold tracking-wider text-lg">Coinflip</p>
                         </div>
                     </a>
-                    <a href="/" class=" relative h-fit w-56 cursor-pointer rounded-lg overflow-hidden m-3 border border-surface-500 hover:border-primary-700/90">
+                    <a href="/wheel" class=" relative h-fit w-56 cursor-pointer rounded-lg overflow-hidden m-3 border border-surface-500 hover:border-primary-700/90">
                         <img src="/ThewheelHowl.png" alt="blackjack">
                         <div class=" flex justify-center items-center absolute bottom-0 w-full h-1/4 bg-surface-800/60 z-10">
-                            <p class=" font-extrabold tracking-wider text-lg">Work in progress</p>
+                            <p class=" font-extrabold tracking-wider text-lg">Wheel</p>
                         </div>
                     </a>
                     <a href="/" class=" relative h-fit w-56 cursor-pointer rounded-lg overflow-hidden m-3 border border-surface-500 hover:border-primary-700/90">

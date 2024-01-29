@@ -284,7 +284,7 @@ function PlayerStand(){
     <div class="flex flex-col items-center justify-center h-screen w-[calc(100%-20.625rem)]">
         <div class=" min-h-24"></div>
         {#if onload}
-        <div class="flex items-center justify-between bg-primary-700 h-full w-full max-w-[1200px] max-h-[850px]" in:fade={{duration: 1000}}>
+        <div class="flex items-center justify-between bg-primary-700 h-full w-full max-w-[1200px] max-h-[850px] rounded" in:fade={{duration: 1000}}>
             <div id="betting interface" class="flex flex-col justify-center items-center h-full w-1/3">
                 <div id="betting amount buttons" class="flex m-[0.5rem] w-[13rem] justify-between ">
                     <button type="button" class="btn rounded-lg w-[4rem] h-[2.5rem] bg-surface-700 ">1/2</button>
@@ -300,7 +300,7 @@ function PlayerStand(){
                     <button id="CardDrawButton" disabled={CardDrawButton} on:click={() => carddraw()} type="button" class="btn rounded-lg w-[14.5rem] h-[3rem] bg-primary-900">Place bet</button>
                 </div>
             </div>
-            <div id="spillbrett" class="flex flex-col items-center justify-between bg-primary-900 h-[92%] w-[58%] mr-[2.1%]">
+            <div id="spillbrett" class="flex flex-col items-center justify-between bg-primary-900 h-[92%] w-[58%] mr-[2.5%] rounded">
                 <div id="DealerKort" class="flex relative justify-between border-[0.1rem] mt-[1rem] border-black h-[11rem] w-[18rem]">
                     
                 </div>
