@@ -2,7 +2,6 @@
     import { closeModal } from 'svelte-modals'
     import { user } from '../lib/stores/user'
     import { Avatar } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
 
     // provided by Modals
     export let isOpen

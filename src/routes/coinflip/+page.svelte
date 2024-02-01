@@ -1,29 +1,8 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
-	import Chat from '../chat.svelte'
-	import Header from '../header.svelte'
     import { onMount } from 'svelte';
-    import { Modal } from '@skeletonlabs/skeleton';
-    import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
-    import { initializeStores } from '@skeletonlabs/skeleton';
-    import { Avatar } from '@skeletonlabs/skeleton';
-    import { getModalStore } from '@skeletonlabs/skeleton';
 	import Cfspill from '../cfspill.svelte';
-
-    /* on:click={() => modalStore.trigger(modalJoin)} */
-
-    initializeStores();
-			
-    const modalStore = getModalStore();
-
-    const modalCreate: ModalSettings = {
-        type: 'confirm',
-        // Data
-        title: 'Lag coinflip spill',
-        body: 'Are you sure you wish to proceed?',
-        // TRUE if confirm pressed, FALSE if cancel pressed
-        response: (r: boolean) => console.log('response:', r),
-    };
+	import LagcfButton from '../lagcfButton.svelte';
 
     let onload = false
 
@@ -32,7 +11,6 @@
     })
 </script>
 
-<Modal />
 <div class=" flex justify-between h-screen w-screen bg-gradient-to-b from-transparent via-primary-900/20 to-transparent">
     <div class=" flex flex-col items-center h-screen w-[calc(100%-20.625rem)]">
         <div class=" min-h-24"></div>
@@ -44,7 +22,7 @@
                 </div>
                 <div class=" flex items-center">
                     <p class=" text-surface-400 font-semibold">Åpne spill: 0</p>
-                    <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalCreate)}>Lag nytt spill</button>
+                    <LagcfButton />
                 </div>
             </div>
             <div class=" flex flex-col mt-5">
