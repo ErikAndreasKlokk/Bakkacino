@@ -3,7 +3,7 @@
     import { onMount } from 'svelte';
 	import Cfspill from '../Components/faktiske_components/cfspill.svelte';
     import { getModalStore } from '@skeletonlabs/skeleton';
-    import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
+    import type { ModalSettings } from '@skeletonlabs/skeleton';
 			
     const modalStore = getModalStore();
 

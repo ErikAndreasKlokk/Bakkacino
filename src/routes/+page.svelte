@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import Spiltespill from './spiltespill.svelte';
+	import Spiltespill from './Components/faktiske_components/spiltespill.svelte';
 
 	let onload = false
 

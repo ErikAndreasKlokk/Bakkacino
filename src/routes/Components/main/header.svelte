@@ -3,13 +3,11 @@
     import { popup } from '@skeletonlabs/skeleton';
     import type { PopupSettings } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
-	import SignInButton from '../../SignInButton.svelte';
-	import SignUpButton from '../../signUpButton.svelte';
     import { user } from '../../../lib/stores/user.js'
     import Cookies from 'js-cookie';
     import { coins } from '../../../lib/stores/coins.js'
     import { validate } from '../../../lib/stores/validation.js'
-    import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
+    import type { ModalSettings } from '@skeletonlabs/skeleton';
     import { getModalStore } from '@skeletonlabs/skeleton';
 			
     const modalStore = getModalStore();
@@ -17,6 +15,18 @@
     const modalProfile: ModalSettings = {
         type: 'component',
         component: 'profile'
+        // Data
+    };
+
+    const modalSignin: ModalSettings = {
+        type: 'component',
+        component: 'signin'
+        // Data
+    };
+
+    const modalSignup: ModalSettings = {
+        type: 'component',
+        component: 'signup'
         // Data
     };
     
@@ -167,8 +177,8 @@
                 </div>
             {:else}
                 <div class=" flex h-9 w-[12rem]">
-                    <SignUpButton />
-                    <SignInButton />
+                    <button on:click="{() => modalStore.trigger(modalSignup)}" class=" bg-surface-600 border border-surface-400/70 p-1 px-3 rounded-r-none rounded-lg active:scale-95 w-full border-r-0">Registrer</button>
+                    <button on:click="{() => modalStore.trigger(modalSignin)}" class=" bg-primary-700/80 border border-primary-500 p-1 px-3 rounded-l-none rounded-lg active:scale-95 w-full border-l-0">Logg Inn</button>
                 </div>
             {/if}
         </div>
