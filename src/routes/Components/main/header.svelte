@@ -10,7 +10,16 @@
     import { coins } from '../../../lib/stores/coins.js'
     import { validate } from '../../../lib/stores/validation.js'
 	import ProfileButton from '../../profileButton.svelte';
+    import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
+    import { getModalStore } from '@skeletonlabs/skeleton';
+			
+    const modalStore = getModalStore();
 
+    const modalProfile: ModalSettings = {
+        type: 'component',
+        component: 'profile'
+        // Data
+    };
     
 
     const popupFeatured: PopupSettings = {
@@ -80,7 +89,7 @@
           username: '',
           email: '',
           password: '',
-          level: Number
+          level: 1
         })
         coins.set({
             coins: 0
@@ -141,6 +150,7 @@
                 </div>
                 <div class=" bg-surface-700 w-32 rounded-lg p-1" data-popup="popupProfile">
                     <ProfileButton />
+                    <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalProfile)}>Profile</button>
                     <!-- svelte-ignore a11y-no-static-element-interactions -->
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
                     <div on:click={() => SignOut()} class=" flex h-8 items-center cursor-pointer rounded-lg hover:bg-surface-500">

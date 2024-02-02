@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { SvelteComponent } from 'svelte';
-
 	import { getModalStore } from '@skeletonlabs/skeleton';
 
 	// Props

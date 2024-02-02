@@ -2,7 +2,17 @@
     import { fade } from 'svelte/transition';
     import { onMount } from 'svelte';
 	import Cfspill from '../cfspill.svelte';
-	import LagcfButton from '../lagcfButton.svelte';
+    import { getModalStore } from '@skeletonlabs/skeleton';
+    import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
+			
+    const modalStore = getModalStore();
+
+
+    const modalLag: ModalSettings = {
+        type: 'component',
+        component: 'lagCF'
+        // Data
+    };
 
     let onload = false
 
@@ -22,7 +32,7 @@
                 </div>
                 <div class=" flex items-center">
                     <p class=" text-surface-400 font-semibold">Åpne spill: 0</p>
-                    <LagcfButton />
+                    <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalLag)}>Lag ny Coinflip</button>
                 </div>
             </div>
             <div class=" flex flex-col mt-5">

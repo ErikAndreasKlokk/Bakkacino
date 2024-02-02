@@ -11,10 +11,13 @@
 	import Header from './Components/main/header.svelte';
 	import {Modal} from '@skeletonlabs/skeleton';
 	import Joincf from './Components/modals/joincf.svelte';
+	import Lagcf from './Components/modals/lagcf.svelte';
+	import Profile from './Components/modals/profile.svelte';
 
 	const modalRegistry: Record<string, ModalComponent> = {
-		joinCF: { ref: Joincf}
-		
+		joinCF: { ref: Joincf},
+		lagCF: { ref: Lagcf},
+		profile: { ref: Profile}
 	}
 			
 

@@ -1,7 +1,5 @@
 <script>
     import { draw, fade } from 'svelte/transition';
-	import Chat from '../chat.svelte'
-	import Header from '../header.svelte'
     import { onMount } from 'svelte';
 
     let onload = false

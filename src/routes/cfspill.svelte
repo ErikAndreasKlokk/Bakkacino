@@ -25,7 +25,7 @@
             <p class=" font-extrabold ">10.0</p>
         </div>
         <div>
-            <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalJoin)}>Join</button>
+            <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalJoin)}>Delta</button>
         </div>
     </div>
 </div>

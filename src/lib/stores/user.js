@@ -4,5 +4,5 @@ export const user = writable({
   username: '',
   email: '',
   password: '',
-  level: Number
+  level: 1
 });

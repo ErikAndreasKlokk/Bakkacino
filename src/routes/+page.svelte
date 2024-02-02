@@ -1,6 +1,5 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import Header from './header.svelte'
 	import { onMount } from 'svelte';
 	import Spiltespill from './spiltespill.svelte';
 
