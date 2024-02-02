@@ -1,7 +1,6 @@
 <script lang="ts">
     import { Avatar } from "@skeletonlabs/skeleton";
     import { getModalStore } from '@skeletonlabs/skeleton';
-    import { Modal } from '@skeletonlabs/skeleton';
     import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
 			
     const modalStore = getModalStore();

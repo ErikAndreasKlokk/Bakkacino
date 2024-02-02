@@ -1,5 +1,5 @@
 <script>
-	import Message from '../../message.svelte';
+	import Message from '../faktiske_components/message.svelte';
     import { validate } from '../../../lib/stores/validation.js'
     import { onMount } from 'svelte';
     import Cookies from 'js-cookie';

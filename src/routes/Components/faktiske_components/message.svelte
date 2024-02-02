@@ -1,6 +1,6 @@
 <script>
     import { Avatar } from '@skeletonlabs/skeleton';
-    import { user } from '../lib/stores/user.js'
+    import { user } from '../../../lib/stores/user.js'
 
     export let username;
     export let message;

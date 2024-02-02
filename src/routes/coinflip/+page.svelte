@@ -1,7 +1,7 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
     import { onMount } from 'svelte';
-	import Cfspill from '../cfspill.svelte';
+	import Cfspill from '../Components/faktiske_components/cfspill.svelte';
     import { getModalStore } from '@skeletonlabs/skeleton';
     import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
 			
