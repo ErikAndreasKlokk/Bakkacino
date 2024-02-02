@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { closeModal } from 'svelte-modals'
-      import { user } from '../../../lib/stores/user';
+    import { user } from '../../../lib/stores/user';
     import Cookies from 'js-cookie';
     import { Toast, getToastStore } from '@skeletonlabs/skeleton';
     import type { ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
@@ -82,7 +81,7 @@
     }
   
     const cBase = 'card p-4 w-modal shadow-xl space-y-4';
-      const cHeader = 'text-2xl font-bold mb-4';
+    const cHeader = 'text-2xl font-bold mb-4';
     const cForm = 'border border-surface-500 p-4 space-y-4 h-[85%]';
   
   </script>

@@ -18,11 +18,11 @@
 	import Signup from './Components/modals/signup.svelte';
 
 	const modalRegistry: Record<string, ModalComponent> = {
-		joinCF: { ref: Joincf},
-		lagCF: { ref: Lagcf},
-		profile: { ref: Profile},
-		signin: { ref: Signin},
-		signup: { ref: Signup}
+		joinCF: { ref: Joincf },
+		lagCF: { ref: Lagcf },
+		profile: { ref: Profile },
+		signin: { ref: Signin },
+		signup: { ref: Signup }
 	}
 			
 

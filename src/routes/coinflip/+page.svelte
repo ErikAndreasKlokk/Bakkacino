@@ -40,8 +40,8 @@
                     <p class=" text-base font-bold tracking-widest text-surface-300">Spiller</p>
                 </div>
                 <div class=" flex flex-col border-t border-surface-400"> <!-- Her er diven med alle de aktiv spillene -->
-                    <Cfspill />
-                    <Cfspill />
+                    <Cfspill username="erik" value=10/>
+                    <Cfspill username="erik" value=10/>
                 </div>
             </div>
         </div>
