@@ -10,8 +10,6 @@
 
 	const modalStore = getModalStore();
 
-	// Base Classes
-
 </script>
 
 
