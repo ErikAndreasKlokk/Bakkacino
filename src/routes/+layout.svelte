@@ -7,10 +7,10 @@
 	import { initializeStores } from '@skeletonlabs/skeleton';
 	import { Toast, getToastStore } from '@skeletonlabs/skeleton';
 	import type { ModalComponent, ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
-	import Chat from './chat.svelte'
-	import Header from './header.svelte';
+	import Chat from './Components/main/chat.svelte'
+	import Header from './Components/main/header.svelte';
 	import {Modal} from '@skeletonlabs/skeleton';
-	import Joincf from './joincf.svelte';
+	import Joincf from './Components/modals/joincf.svelte';
 
 	const modalRegistry: Record<string, ModalComponent> = {
 		joinCF: { ref: Joincf}

@@ -3,13 +3,13 @@
     import { popup } from '@skeletonlabs/skeleton';
     import type { PopupSettings } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
-	import SignInButton from './SignInButton.svelte';
-	import SignUpButton from './signUpButton.svelte';
-    import { user } from '../lib/stores/user.js'
+	import SignInButton from '../../SignInButton.svelte';
+	import SignUpButton from '../../signUpButton.svelte';
+    import { user } from '../../../lib/stores/user.js'
     import Cookies from 'js-cookie';
-    import { coins } from '../lib/stores/coins.js'
-    import { validate } from '../lib/stores/validation.js'
-	import ProfileButton from './profileButton.svelte';
+    import { coins } from '../../../lib/stores/coins.js'
+    import { validate } from '../../../lib/stores/validation.js'
+	import ProfileButton from '../../profileButton.svelte';
 
     
 
