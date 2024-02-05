@@ -78,18 +78,18 @@
         <form on:submit={() => postSignIn()} class="modal-form {cForm} flex flex-col justify-between rounded-lg">
           <div>
             <div class="relative z-0 w-64 mb-5 group">
-              <input bind:value={formData.email} type="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <input bind:value={formData.email} type="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:ring-0 focus:border-blue-600 peer focus:!outline-none" placeholder=" " required />
               <label for="" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
             </div>
             <div class="relative z-0 w-64 mb-5 group">
-              <input bind:value={formData.password} type="password" class=" block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-              <label for="" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+              <input bind:value={formData.password} type="password" class=" block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:ring-0 focus:border-blue-600 peer focus:!outline-none" placeholder=" " required />
+              <label for="" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ">Password</label>
             </div>
           </div>
-          <input type="submit" class=" w-0 m-0 p-0 h-0 !mt-0">
+          <input tabindex="-1" type="submit" class=" w-0 m-0 p-0 h-0 !mt-0">
             <div class=" flex justify-between">
-                <button class=" bg-surface-600 border border-surface-400 rounded-lg p-1 px-3 active:scale-95" on:click="{parent.onClose}">Cancel</button>
-                <input class=" cursor-pointer bg-primary-700/30 border border-primary-500 px-4 rounded-lg active:scale-95" type="submit" value="Sign In">
+                <button class=" bg-surface-600 border border-surface-400 rounded-lg p-1 px-3 active:scale-95 focus:!outline-[0.3px] focus:!outline-surface-700" on:click="{parent.onClose}">Cancel</button>
+                <input class=" cursor-pointer bg-primary-700/30 border border-primary-500 px-4 rounded-lg active:scale-95 focus:!outline-[0.3px] focus:!outline-surface-700" type="submit" value="Sign In">
             </div>
         </form>
       </div>
