@@ -107,8 +107,8 @@
           </div>
           <input tabindex="-1" type="submit" class=" w-0 m-0 p-0 h-0 !mt-0">
             <div class=" flex justify-between">
-                <button class=" bg-surface-600 border border-surface-400 rounded-lg p-1 px-3 active:scale-95 focus:!outline[0.3px] focus:!outline-surface-700" on:click="{parent.onClose}">Cancel</button>
-                <input class=" cursor-pointer bg-primary-700/30 border border-primary-500 px-4 rounded-lg active:scale-95 focus:!outline[0.3px] focus:!outline-surface-700" type="submit" value="Sign Up">
+                <button class=" focus:!outline[0.3px] focus:!outline-surface-700 btn variant-filled !bg-surface-500/50 !text-surface-100 !rounded-lg" on:click="{parent.onClose}">Cancel</button>
+                <input class=" focus:!outline[0.3px] focus:!outline-surface-700 btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg cursor-pointer" type="submit" value="Sign Up">
             </div>
         </form>
       </div>
