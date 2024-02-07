@@ -73,7 +73,7 @@
     
     {#if $modalStore[0]}
       <div class=" bg-surface-800 p-6 rounded-lg h-[22rem]">
-        <header class={cHeader}>Sign In</header>
+        <header class={cHeader}>Logg Inn</header>
         <!-- Enable for debugging: -->
         <form on:submit={() => postSignIn()} class="modal-form {cForm} flex flex-col justify-between rounded-lg">
           <div>

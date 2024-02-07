@@ -177,8 +177,8 @@
                 </div>
             {:else}
                 <div class=" flex h-9 w-[12rem]">
-                    <button on:click="{() => modalStore.trigger(modalSignup)}" class=" bg-surface-600 border border-surface-400/70 p-1 px-3 rounded-r-none rounded-lg active:scale-95 w-full border-r-0">Registrer</button>
-                    <button on:click="{() => modalStore.trigger(modalSignin)}" class=" bg-primary-700/80 border border-primary-500 p-1 px-3 rounded-l-none rounded-lg active:scale-95 w-full border-l-0">Logg Inn</button>
+                    <button on:click="{() => modalStore.trigger(modalSignup)}" class=" focus:!outline[0.3px] focus:!outline-surface-700 btn variant-filled !bg-surface-500 !text-surface-100 !rounded-lg !rounded-r-none">Registrer</button>
+                    <button on:click="{() => modalStore.trigger(modalSignin)}" class=" focus:!outline[0.3px] focus:!outline-surface-700 btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg cursor-pointer !rounded-l-none">Logg Inn</button>
                 </div>
             {/if}
         </div>

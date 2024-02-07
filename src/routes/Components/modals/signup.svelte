@@ -88,7 +88,7 @@
     
     {#if $modalStore[0]}
       <div class=" bg-surface-800 p-6 rounded-lg h-[25rem]  ">
-        <header class={cHeader}>Sign Up</header>
+        <header class={cHeader}>Registrer</header>
         <!-- Enable for debugging: -->
         <form on:submit={() => postSignUp()} class="modal-form rounded-lg {cForm} flex flex-col justify-between">
           <div>

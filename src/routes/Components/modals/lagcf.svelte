@@ -26,6 +26,7 @@
         </div>
         <div class=" w-full h-[calc(100%-64px-2rem)] mt-8 flex flex-col justify-between">
             <div>
+                <p>Velg hvor mye du vil vedde!</p>
                 <input type="number">
                 <form action="">
                     <label for="heads">heads</label>
