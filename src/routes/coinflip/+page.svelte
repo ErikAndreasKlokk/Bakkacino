@@ -4,6 +4,7 @@
 	import Cfspill from '../Components/faktiske_components/cfspill.svelte';
     import { getModalStore } from '@skeletonlabs/skeleton';
     import type { ModalSettings } from '@skeletonlabs/skeleton';
+    import { user } from '../../lib/stores/user';
 			
     const modalStore = getModalStore();
 
@@ -32,7 +33,11 @@
                 </div>
                 <div class=" flex items-center">
                     <p class=" text-surface-400 font-semibold">Åpne spill: 0</p>
+                    {#if $user.username}
                     <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalLag)}>Lag ny Coinflip</button>
+                    {:else}
+                    <button type="button" disabled class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5">Lag ny Coinflip</button>
+                    {/if}
                 </div>
             </div>
             <div class=" flex flex-col mt-5">

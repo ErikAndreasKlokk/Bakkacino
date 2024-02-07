@@ -2,6 +2,7 @@
     import { Avatar } from "@skeletonlabs/skeleton";
     import { getModalStore } from '@skeletonlabs/skeleton';
     import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
+    import { user } from '../../../lib/stores/user';
 			
     const modalStore = getModalStore();
 
@@ -28,7 +29,11 @@
             <p class=" font-extrabold ">{value}</p>
         </div>
         <div>
-            <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalJoin)}>Delta</button>
+            {#if $user.username}
+                <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalJoin)}>Delta</button>
+            {:else}
+            <button type="button" disabled class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5">Delta</button>
+            {/if}
         </div>
     </div>
 </div>
