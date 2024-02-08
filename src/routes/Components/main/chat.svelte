@@ -61,7 +61,7 @@
                     <img class=" h-14" src="/Gold_Coins.png" alt="coins">
                     <div class=" flex flex-col items-center">
                         <p class=" text-xs text-surface-400 font-bold">coindrops verdi</p>
-                        <p class=" text-lg font-extrabold">20.00</p>
+                        <p class=" text-lg font-extrabold [letter-spacing:_0.1rem;]">1000</p>
                     </div>
                 </div>
                 <div class=" flex flex-col items-center justify-evenly h-full">

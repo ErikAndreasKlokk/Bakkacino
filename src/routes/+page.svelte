@@ -66,7 +66,7 @@
 				<div class=" flex shadow-2xl bg-surface-800 w-72 h-20 justify-between items-center rounded-lg">
 					<img class=" ml-7 h-14" src="/Gold_Coins.png" alt="">
 					<div class=" flex justify-center items-center mr-4">
-						<p class=" font-extrabold text-4xl [letter-spacing:_0.6rem;] [text-shadow:_0_2px_0_rgb(0_0_0_/_50%)] ">11.00</p>
+						<p class=" font-extrabold text-4xl [letter-spacing:_0.4rem;] [text-shadow:_0_2px_0_rgb(0_0_0_/_50%)] ">1000</p>
 					</div>
 				</div>
 			</div>
