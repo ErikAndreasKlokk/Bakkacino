@@ -34,9 +34,9 @@
                 <div class=" flex items-center">
                     <p class=" text-surface-400 font-semibold">Åpne spill: 0</p>
                     {#if $user.username}
-                    <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalLag)}>Lag ny Coinflip</button>
+                        <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalLag)}>Lag ny Coinflip</button>
                     {:else}
-                    <button type="button" disabled class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5">Lag ny Coinflip</button>
+                        <button type="button" disabled class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5">Lag ny Coinflip</button>
                     {/if}
                 </div>
             </div>
@@ -45,8 +45,8 @@
                     <p class=" text-base font-bold tracking-widest text-surface-300">Spiller</p>
                 </div>
                 <div class=" flex flex-col border-t border-surface-400"> <!-- Her er diven med alle de aktiv spillene -->
-                    <Cfspill username="erik" value=10/>
-                    <Cfspill username="erik" value=10/>
+                    <Cfspill username="Herjus" value=10/>
+                    <Cfspill username="erik" value=10000/>
                 </div>
             </div>
         </div>
