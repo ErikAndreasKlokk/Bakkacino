@@ -73,10 +73,10 @@
     </div>
     <div class=" h-full overflow-scroll flex flex-col-reverse">
         {#each messages as message}
-            <Message username={message.user} message={message.value} level={message.level}/>
+            <Message username={message.user} message={message.value} msgLevel={message.level}/>
         {/each}
     </div>
     <form on:submit={sendMessage} class=" h-24 flex items-center justify-center">
-        <input bind:value={message_field} disabled={!$validate.validation} class=" disabled:cursor-not-allowed h-4/6 w-5/6 bg-surface-800 border border-surface-400 rounded-md text-surface-100 text-sm px-2" placeholder={$validate.validation ? 'Write your message here...' : 'Log In to type a message...'} type="text">
+        <input bind:value={message_field} disabled={!$validate.validation} class=" disabled:cursor-not-allowed h-4/6 w-5/6 bg-surface-800 border border-surface-400 rounded-md text-surface-100 text-sm px-2" placeholder={$validate.validation ? 'Skriv meldingen din her...' : 'Logg inn for å skrive en melding...'} type="text">
     </form>
 </main>

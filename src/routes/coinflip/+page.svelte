@@ -5,6 +5,7 @@
     import { getModalStore } from '@skeletonlabs/skeleton';
     import type { ModalSettings } from '@skeletonlabs/skeleton';
     import { user } from '../../lib/stores/user';
+    import axios from 'axios';
 			
     const modalStore = getModalStore();
 
@@ -16,9 +17,16 @@
     };
 
     let onload = false
+    let cfspillArray = []
 
     onMount(() => {
         onload = true
+
+        axios.get('https://bakkacino.herjus.tech/coinflip')
+        .then(function (response) {
+            console.log(response.data)
+            cfspillArray = response.data
+        })
     })
 </script>
 
@@ -45,8 +53,9 @@
                     <p class=" text-base font-bold tracking-widest text-surface-300">Spiller</p>
                 </div>
                 <div class=" flex flex-col border-t border-surface-400"> <!-- Her er diven med alle de aktiv spillene -->
-                    <Cfspill username="Herjus" value=10/>
-                    <Cfspill username="erik" value=10000/>
+                        {#each cfspillArray as cfspill}
+                            <Cfspill usernamep1={cfspill.players[0].username} value={cfspill.bet_amount} levelp1={cfspill.players[0].level}/>
+                        {/each}
                 </div>
             </div>
         </div>

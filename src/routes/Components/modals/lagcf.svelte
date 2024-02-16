@@ -8,7 +8,27 @@
 	/** Exposes parent props to this component. */
 	export let parent: SvelteComponent;
 
+    let heads = false;
+    let tails = false;
+
 	const modalStore = getModalStore();
+
+    let arr = [
+        {
+            id: 1,
+        },
+        {
+            id: 2,
+        },
+    ];
+    let selectedIndex;
+    let name = 0;
+    $:  {
+        if (selectedIndex !== undefined) {
+            name = arr[selectedIndex].id;
+            console.log(name)
+        }
+    }
 
 </script>
 
@@ -38,14 +58,14 @@
                     <div class=" flex mt-4">
                         <label for="heads" class=" relative w-40 h-40 flex justify-center items-center rounded-full mx-2">
                             <!-- svelte-ignore a11y-positive-tabindex -->
-                            <input tabindex="2" type="radio" id="heads" name="coinflip" class=" absolute focus:!outline[0.3px] focus:!outline-surface-700">
-                            <img class=" absolute" src="/Gold-Coin.png" alt="heads">
+                            <input on:input={() => name = 1} tabindex="2" type="radio" id="heads" name="coinflip" class=" absolute focus:!outline[0.3px] focus:!outline-surface-700 w-14 h-14">
+                            <img class=" absolute rounded-full w-full {(name === 1) ? 'border border-primary-700' : ''}" src="/Gold-Coin.png" alt="heads">
                             <p class=" absolute text-surface-600 font-bold text-xl" >Heads</p>
                         </label>
                         <label for="tails" class=" relative w-40 h-40 flex justify-center items-center rounded-full mx-2">
                             <!-- svelte-ignore a11y-positive-tabindex -->
-                            <input tabindex="3" type="radio" id="tails" name="coinflip" class=" absolute focus:!outline[0.3px] focus:!outline-surface-700">
-                            <img class=" absolute w-full" src="/Gold-Coin.png" alt="tails">
+                            <input on:input={() => name = 2} tabindex="3" type="radio" id="tails" name="coinflip" class=" absolute focus:!outline[0.3px] focus:!outline-surface-700">
+                            <img class=" absolute rounded-full w-full  {(name === 2) ? 'border border-primary-700' : ''}" src="/Gold-Coin.png" alt="tails">
                             <p class=" absolute text-surface-600 font-bold text-xl" >Tails</p>
                         </label>
                     </div>
