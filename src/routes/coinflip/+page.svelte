@@ -49,10 +49,7 @@
                 </div>
             </div>
             <div class=" flex flex-col mt-5">
-                <div class=" mb-2">
-                    <p class=" text-base font-bold tracking-widest text-surface-300">Spiller</p>
-                </div>
-                <div class=" flex flex-col border-t border-surface-400"> <!-- Her er diven med alle de aktiv spillene -->
+                <div class=" grid grid-cols-2 gap-4"> <!-- Her er diven med alle de aktiv spillene -->
                         {#each cfspillArray as cfspill}
                             <Cfspill usernamep1={cfspill.players[0].username} value={cfspill.bet_amount} levelp1={cfspill.players[0].level}/>
                         {/each}

@@ -144,6 +144,7 @@
                 </div>
             </div>
         </div>
+        {#if $validate.validation}
         <div class=" flex flex-1 justify-center">
             <div class=" flex items-center bg-surface-900 p-2 border border-primary-700 rounded-lg">
                 <img class=" h-5" src="/Gold-Coin.png" alt="gold coin">
@@ -151,6 +152,7 @@
                 <span class="flex h-5.5 mr-1 items-center rounded-lg border border-surface-600 bg-surface-800 px-1.5 pt-0.25 text-[0.625rem] font-bold text-gray-400">COINS</span>
             </div>
         </div>
+        {/if}
         <div class=" flex flex-1 justify-end">
             {#if $validate.validation}
                 <div class=" relative">
