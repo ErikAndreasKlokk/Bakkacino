@@ -40,7 +40,7 @@
                     <p class=" text-2xl font-semibold tracking-wider">Aktive spill</p>
                 </div>
                 <div class=" flex items-center">
-                    <p class=" text-surface-400 font-semibold">Åpne spill: 0</p>
+                    <p class=" text-surface-400 font-semibold">Åpne spill: <span class=" text-surface-200 font-extrabold">{cfspillArray.length}</span></p>
                     {#if $user.username}
                         <button type="button" class="btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg ml-5" on:click={() => modalStore.trigger(modalLag)}>Lag ny Coinflip</button>
                     {:else}
