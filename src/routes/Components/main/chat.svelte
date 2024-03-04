@@ -3,9 +3,11 @@
     import { validate } from '../../../lib/stores/validation.js'
     import { onMount } from 'svelte';
     import Cookies from 'js-cookie';
+    import { coins } from '../../../lib/stores/coins'
 
 
     let ws;
+    let coinsws;
     let messages = [];
 
     onMount(() => {
@@ -21,12 +23,11 @@
                 }
                 ws = new WebSocket("wss://bakkacino.herjus.tech/chat")
             }
-            ws.onopen = function(event) {
-            }
             ws.onmessage = function(event) {
                 const data = JSON.parse(event.data)
                 messages = [data, ...messages]
             };
+            
         })
     })
 
@@ -48,6 +49,7 @@
         <div class=" bg-surface-800 flex justify-center items-center h-40 border-b-8 border-surface-900 w-full">
             <img class=" h-28" src="/bakkacino.png" alt="logo bakkacino">
         </div>
+        {#if false}
         <div class=" flex flex-col bg-gradient-to-bl from-surface-800 to-primary-900/30 w-[18.7rem] rounded-md border border-primary-700"> <!-- coindrop -->
             <div class=" flex justify-between items-center pt-1 px-4">
                 <p class=" text-3xl font-black bg-gradient-to-br from-primary-600 to-primary-400 bg-clip-text text-transparent box-decoration-clone items-center">COINDROP!</p>
@@ -70,6 +72,7 @@
                 </div>
             </div>
         </div>
+        {/if}
     </div>
     <div class=" h-full overflow-scroll flex flex-col-reverse">
         {#each messages as message}

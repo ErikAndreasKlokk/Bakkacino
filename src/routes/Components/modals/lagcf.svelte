@@ -7,6 +7,7 @@
     import type { ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
 	import axios from 'axios';
     import Cookies from 'js-cookie';
+    import { coins } from '../../../lib/stores/coins'
 
 	// Props
 	/** Exposes parent props to this component. */
@@ -16,6 +17,7 @@
 
     let heads = false;
     let tails = false;
+    let betAmountInput = Number;
 
 	const modalStore = getModalStore();
 
@@ -45,6 +47,10 @@
                     Authorization: `Bearer ${token}`
                 }
             })
+            coins.set({
+                coins: $coins.coins-bet_amount
+            })
+            modalStore.close()
         } catch (error) {
             console.error(error.response.data.detail);
             const t: ToastSettings = {
@@ -52,7 +58,6 @@
             };
             toastStore.trigger(t);
         }
-        modalStore.close()
     }
 </script>
 
@@ -75,7 +80,7 @@
                 <div id="betting amount" class="flex items-center bg-surface-900 p-2 border-[2px] border-primary-900 rounded-lg w-full h-[3rem] my-4">
                     <img class=" h-5" src="/Gold-Coin.png" alt="gold coin">
                     <!-- svelte-ignore a11y-positive-tabindex -->
-                    <input tabindex="1" class=" w-full mr-3 ml-2 font-extrabold font-family-bakka text-base text-right focus:!style-none bg-transparent focus:!outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" type="number" min="1">
+                    <input bind:value={betAmountInput} tabindex="1" class=" w-full mr-3 ml-2 font-extrabold font-family-bakka text-base text-right focus:!style-none bg-transparent focus:!outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" type="number" min="1">
                 </div>
                 <form action="">
                     <p class=" font-bold text-xl">Hvilken side vil du være?</p>
@@ -99,7 +104,7 @@
                 <!-- svelte-ignore a11y-positive-tabindex -->
                 <button tabindex="4" on:click={parent.onClose} class=" focus:!outline[0.3px] focus:!outline-surface-700 btn variant-filled !bg-surface-500/50 !text-surface-100 !rounded-lg">Cancel</button>
                 <!-- svelte-ignore a11y-positive-tabindex -->
-                <button tabindex="5" on:click={() => postLagCf(10)} type="submit" class=" focus:!outline[0.3px] focus:!outline-surface-700 btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg">Lag Coinflip</button>
+                <button tabindex="5" on:click={() => postLagCf(betAmountInput)} type="submit" class=" focus:!outline[0.3px] focus:!outline-surface-700 btn variant-filled !bg-primary-600 !text-surface-100 !rounded-lg">Lag Coinflip</button>
             </div>
         </div>
     </div>

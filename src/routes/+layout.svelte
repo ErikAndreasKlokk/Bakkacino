@@ -24,7 +24,7 @@
 		signin: { ref: Signin },
 		signup: { ref: Signup }
 	}
-			
+	
 
 	initializeStores();
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
