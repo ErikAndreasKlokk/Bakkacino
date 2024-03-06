@@ -81,11 +81,6 @@
                         password: data.password,
                         level: data.level
                     })
-                    // if (data.coins) {
-                    //     coins.set({
-                    //         coins: data.coins
-                    //     })
-                    // }
                     if (coinsws && coinsws.readyState === WebSocket.OPEN) {
                         coinsws.close()
                     }
